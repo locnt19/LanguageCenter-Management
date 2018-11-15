@@ -1,0 +1,4 @@
+B:\HK5\QuanLyTrungTamNgoaiNgu\DTO\bin\Debug\DTO.dll
+B:\HK5\QuanLyTrungTamNgoaiNgu\DTO\bin\Debug\DTO.pdb
+B:\HK5\QuanLyTrungTamNgoaiNgu\DTO\obj\Debug\DTO.dll
+B:\HK5\QuanLyTrungTamNgoaiNgu\DTO\obj\Debug\DTO.pdb

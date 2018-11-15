@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DAO;
+using DTO;
+namespace BUS
+{
+    public class NhanVienBUS
+    {
+        NhanVienDAO _nv = new NhanVienDAO();
+
+        public NhanVienDTO DangNhapBUS(string TaiKhoan, string MatKhau)
+        {
+            return _nv.DangNhapDAO(TaiKhoan, MatKhau);
+        }
+
+        public List<NhanVienDTO> get_NhanVienBUS()
+        {
+            return _nv.get_NhanVienDAO();
+        }
+    }
+}
