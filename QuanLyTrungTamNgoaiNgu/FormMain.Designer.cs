@@ -92,12 +92,14 @@
             this.mni_PhongHoc.Name = "mni_PhongHoc";
             this.mni_PhongHoc.Size = new System.Drawing.Size(116, 29);
             this.mni_PhongHoc.Text = "Phòng học";
+            this.mni_PhongHoc.Click += new System.EventHandler(this.mni_PhongHoc_Click);
             // 
             // mni_TaiKhoan
             // 
             this.mni_TaiKhoan.Name = "mni_TaiKhoan";
             this.mni_TaiKhoan.Size = new System.Drawing.Size(116, 29);
             this.mni_TaiKhoan.Text = "Tài khoản";
+            this.mni_TaiKhoan.Click += new System.EventHandler(this.mni_TaiKhoan_Click);
             // 
             // grb_ThongTin
             // 

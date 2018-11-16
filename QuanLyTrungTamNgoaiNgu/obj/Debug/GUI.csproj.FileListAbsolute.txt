@@ -114,3 +114,26 @@ C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrung
 C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormNhanVien.resources
 C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.Properties.Resources.resources
 C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.GenerateResource.Cache
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.pdb
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe.config
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.dll
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\DTO.dll
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\UC.dll
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.dll
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.pdb
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\DTO.pdb
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\UC.pdb
+D:\code2\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.pdb
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormDangNhap.resources
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormHocVien.resources
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormLop.resources
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormMain.resources
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormNhanVien.resources
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormTaiKhoan.resources
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.Properties.Resources.resources
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.GenerateResource.Cache
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
+D:\code2\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormPhongHoc.resources

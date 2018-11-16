@@ -27,7 +27,8 @@ namespace QuanLyTrungTamNgoaiNgu
         FormDangNhap frm_DangNhap;
         FormHocVien frm_HocVien;
         FormNhanVien frm_NhanVien;
-
+        FormTaiKhoan frm_TaiKhoan;
+        FormPhongHoc frm_PhongHoc;
         private void DongTatCaForm()
         {
             foreach (var item in this.MdiChildren)
@@ -101,6 +102,24 @@ namespace QuanLyTrungTamNgoaiNgu
             frm_NhanVien.MdiParent = this;
             frm_NhanVien.Dock = DockStyle.Fill;
             frm_NhanVien.Show();
+        }
+
+        private void mni_TaiKhoan_Click(object sender, EventArgs e)
+        {
+            DongTatCaForm();
+            frm_TaiKhoan = new FormTaiKhoan();
+            frm_TaiKhoan.MdiParent = this;
+            frm_TaiKhoan.Dock = DockStyle.Fill;
+            frm_TaiKhoan.Show();
+        }
+
+        private void mni_PhongHoc_Click(object sender, EventArgs e)
+        {
+            DongTatCaForm();
+            frm_PhongHoc = new FormPhongHoc();
+            frm_PhongHoc.MdiParent = this;
+            frm_PhongHoc.Dock = DockStyle.Fill;
+            frm_PhongHoc.Show();
         }
     }
 }

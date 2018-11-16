@@ -8,8 +8,8 @@ namespace DAO
 {
     public class DataProvider
     {
-        private static string ChuoiKetNoi = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
-
+        private static string ChuoiKetNoi = @"Data Source=.;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
+        private static SqlDataAdapter adt = new SqlDataAdapter();
         public static SqlConnection TaoKetNoi()
         {
             SqlConnection conn = new SqlConnection(ChuoiKetNoi);
@@ -35,6 +35,40 @@ namespace DAO
             SqlCommand cmd = new SqlCommand(query, connect);
             cmd.Parameters.AddRange(pars);
             return cmd.ExecuteReader();
+        }
+        public static int executeinsert(string truyvan, SqlParameter[] par, SqlConnection conn)
+        {
+            SqlCommand cmd = new SqlCommand(truyvan, conn);
+            int rowsAffected;
+            try
+            {
+                cmd.Parameters.AddRange(par);
+                adt.InsertCommand = cmd;
+                rowsAffected = cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                return 0;
+            }
+            return rowsAffected;
+        }
+        public static int executeupdate(string truyvan, SqlParameter[] par, SqlConnection conn)
+        {
+            SqlCommand cmd = new SqlCommand(truyvan, conn);
+            int rowsAffected;
+            try
+            {
+                cmd.Parameters.AddRange(par);
+                adt.InsertCommand = cmd;
+                rowsAffected = cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException e)
+            {
+                return 0;
+            }
+            return rowsAffected;
         }
     }
 }

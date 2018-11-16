@@ -34,3 +34,12 @@ C:\Users\dunca_000\Desktop\clone C#\BUS\bin\Debug\DTO.pdb
 C:\Users\dunca_000\Desktop\clone C#\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\dunca_000\Desktop\clone C#\BUS\obj\Debug\BUS.dll
 C:\Users\dunca_000\Desktop\clone C#\BUS\obj\Debug\BUS.pdb
+D:\code2\BUS\bin\Debug\BUS.dll
+D:\code2\BUS\bin\Debug\BUS.pdb
+D:\code2\BUS\bin\Debug\DAO.dll
+D:\code2\BUS\bin\Debug\DTO.dll
+D:\code2\BUS\bin\Debug\DAO.pdb
+D:\code2\BUS\bin\Debug\DTO.pdb
+D:\code2\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\code2\BUS\obj\Debug\BUS.dll
+D:\code2\BUS\obj\Debug\BUS.pdb

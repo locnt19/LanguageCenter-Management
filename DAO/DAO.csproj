@@ -44,7 +44,9 @@
     <Compile Include="KetQuaDAO.cs" />
     <Compile Include="LopHocDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
+    <Compile Include="PhongDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaiKhoanDAO.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
