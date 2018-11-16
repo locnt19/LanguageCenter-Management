@@ -16,7 +16,7 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPhongHoc());
+            Application.Run(new FormTaiKhoan());
         }
     }
 }

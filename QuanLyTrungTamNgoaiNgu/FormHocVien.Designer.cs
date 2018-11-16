@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.grb_control = new System.Windows.Forms.GroupBox();
-            this.btn_Diem = new System.Windows.Forms.Button();
+            this.btn_LamMoi = new System.Windows.Forms.Button();
             this.btn_DiemDanh = new System.Windows.Forms.Button();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.btn_Huy = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             // 
             // grb_control
             // 
-            this.grb_control.Controls.Add(this.btn_Diem);
+            this.grb_control.Controls.Add(this.btn_LamMoi);
             this.grb_control.Controls.Add(this.btn_DiemDanh);
             this.grb_control.Controls.Add(this.btn_Luu);
             this.grb_control.Controls.Add(this.btn_Huy);
@@ -77,15 +77,15 @@
             this.grb_control.TabStop = false;
             this.grb_control.Text = "Tương tác";
             // 
-            // btn_Diem
+            // btn_LamMoi
             // 
-            this.btn_Diem.Location = new System.Drawing.Point(11, 88);
-            this.btn_Diem.Name = "btn_Diem";
-            this.btn_Diem.Size = new System.Drawing.Size(170, 37);
-            this.btn_Diem.TabIndex = 11;
-            this.btn_Diem.Text = "Điểm";
-            this.btn_Diem.UseVisualStyleBackColor = true;
-            this.btn_Diem.Click += new System.EventHandler(this.btn_Diem_Click);
+            this.btn_LamMoi.Location = new System.Drawing.Point(11, 88);
+            this.btn_LamMoi.Name = "btn_LamMoi";
+            this.btn_LamMoi.Size = new System.Drawing.Size(170, 37);
+            this.btn_LamMoi.TabIndex = 11;
+            this.btn_LamMoi.Text = "Làm mới";
+            this.btn_LamMoi.UseVisualStyleBackColor = true;
+            this.btn_LamMoi.Click += new System.EventHandler(this.btn_LamMoi_Click);
             // 
             // btn_DiemDanh
             // 
@@ -355,7 +355,7 @@
         private System.Windows.Forms.DataGridView dgv_HocVien;
         private System.Windows.Forms.Button btn_DiemDanh;
         //private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_Diem;
+        private System.Windows.Forms.Button btn_LamMoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;

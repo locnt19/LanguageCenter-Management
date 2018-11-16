@@ -47,6 +47,19 @@ namespace DAO
             conn.Close();
             return lst_TaiKhoan;
         }
+
+        public int insert_TaiKhoanDAO(string TenTK, string MatKhau, string LoaiTK)
+        {
+            string insert = "insert into TAIKHOAN values (@TenTK,@MatKhau,@LoaiTK,1)";
+            SqlParameter[] para = new SqlParameter[3];
+            para[0] = new SqlParameter("@TenTK", TenTK);
+            para[1] = new SqlParameter("@MatKhau", MatKhau);
+            para[2] = new SqlParameter("@LoaiTK", LoaiTK);
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            int ketqua = DataProvider.executeinsert(insert, para, conn);
+            conn.Close();
+            return ketqua;
+        }
         public int insert_TaiKhoanDAO(TaiKhoanDTO tkdto)
         {
             string insert = "insert into TAIKHOAN values (@TenTK,@MatKhau,@LoaiTK,1)";

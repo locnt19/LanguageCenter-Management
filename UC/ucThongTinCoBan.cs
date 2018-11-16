@@ -30,40 +30,40 @@ namespace UC
         }
         public string HoTen
         {
-            get { return txt_HoTen.Text; }
-            set { txt_HoTen.Text = value; }
+            get { return this.txt_HoTen.Text; }
+            set { this.txt_HoTen.Text = value; }
         }
         public string Email
         {
-            get;
-            set;
+            get { return this.txt_Email.Text; }
+            set { this.txt_Email.Text = value; }
         }
         public string DiaChi
         {
-            get;
-            set;
+            get { return this.txt_DiaChi.Text; }
+            set { this.txt_DiaChi.Text = value; }
         }
         public string SDT
         {
-            get;
-            set;
+            get { return this.txt_SDT.Text; }
+            set { this.txt_SDT.Text = value; }
         }
         public DateTime NgaySinh
         {
-            get;
-            set;
+            get { return this.dtp_NgaySinh.Value; }
+            set { this.dtp_NgaySinh.Value = value; }
         }
         public int GioiTinh
         {
             get
             {
                 if (rdb_Nam.Checked) return 1;
-                if(rdb_Nu.Checked) return 0;
+                if (rdb_Nu.Checked) return 0;
                 return -1;
             }
             set
             {
-                if (value == 1) 
+                if (value == 1)
                     rdb_Nam.Checked = true;
                 else
                 {
@@ -75,7 +75,7 @@ namespace UC
                         rdb_Nu.Checked = false;
                     }
                 }
-                
+
             }
         }
     }

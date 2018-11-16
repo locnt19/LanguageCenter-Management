@@ -25,8 +25,8 @@ namespace UC
 
         public string MaKetQua
         {
-            get;
-            set;
+            get { return this.cbb_KetQuaHocTap.SelectedValue.ToString(); }
+            set { this.cbb_KetQuaHocTap.SelectedValue = value; }
         }
 
         private void ucKetQuaHocTap_Load(object sender, EventArgs e)

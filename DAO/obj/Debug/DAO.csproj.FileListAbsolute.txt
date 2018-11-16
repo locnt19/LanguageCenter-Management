@@ -26,3 +26,10 @@ D:\code2\DAO\bin\Debug\DTO.pdb
 D:\code2\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 D:\code2\DAO\obj\Debug\DAO.dll
 D:\code2\DAO\obj\Debug\DAO.pdb
+C:\Users\dunca_000\Desktop\New folder\DAO\bin\Debug\DAO.dll
+C:\Users\dunca_000\Desktop\New folder\DAO\bin\Debug\DAO.pdb
+C:\Users\dunca_000\Desktop\New folder\DAO\bin\Debug\DTO.dll
+C:\Users\dunca_000\Desktop\New folder\DAO\bin\Debug\DTO.pdb
+C:\Users\dunca_000\Desktop\New folder\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\dunca_000\Desktop\New folder\DAO\obj\Debug\DAO.dll
+C:\Users\dunca_000\Desktop\New folder\DAO\obj\Debug\DAO.pdb

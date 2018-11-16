@@ -14,17 +14,24 @@ namespace QuanLyTrungTamNgoaiNgu
 {
     public partial class FormPhongHoc : Form
     {
+        public FormPhongHoc()
+        {
+            InitializeComponent();
+            FormBorderStyle = FormBorderStyle.None;
+            dgv_phong.AutoGenerateColumns = false;
+            dgv_phong.AllowUserToAddRows = false;
+            dgv_phong.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_phong.ReadOnly = true;
+            dgv_phong.MultiSelect = false;
+            Loadphongtheomaphong();
+            loadphong();
+        }
+
         PhongDTO phongchon = null;
         List<PhongDTO> ls_phong;
         PhongBUS tkbus = new PhongBUS();
         List<PhongDTO> lsphong = new List<PhongDTO>();
-        public FormPhongHoc()
-        {
-            InitializeComponent();
-            dgv_phong.AutoGenerateColumns = false;
-            Loadphongtheomaphong();
-            loadphong();
-        }
+
         PhongBUS _Phong = new PhongBUS();
 
         private void Loadphongtheomaphong()
@@ -137,6 +144,11 @@ namespace QuanLyTrungTamNgoaiNgu
             }
 
             BindingChiTiet();
+        }
+
+        private void FormPhongHoc_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

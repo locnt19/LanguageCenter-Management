@@ -25,8 +25,8 @@ namespace UC
 
         public string ThoiKhoaBieu
         {
-            get;
-            set;
+            get { return this.cbb_ThoiKhoaBieu.SelectedValue.ToString(); }
+            set { this.cbb_ThoiKhoaBieu.SelectedValue = value; }
         }
 
         private void ucThoiKhoaBieu_Load(object sender, EventArgs e)

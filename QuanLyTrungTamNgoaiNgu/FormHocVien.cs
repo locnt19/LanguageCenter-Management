@@ -26,49 +26,13 @@ namespace QuanLyTrungTamNgoaiNgu
             dgv_HocVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_HocVien.ReadOnly = true;
             dgv_HocVien.MultiSelect = false;
+            txt_MaHV.Enabled = false;
         }
 
         HocVienBUS _hv = new HocVienBUS();
+        List<HocVienDTO> lst_HocVien = new List<HocVienDTO>();
         int _chucnang = 0; // 1-Them, 2-Sua
         HocVienDTO _HocVienDaChon;
-
-        private void Clear()
-        {
-            txt_MaHV.Text = string.Empty;
-            ucCaHocHV.Clear();
-            ucKhoaHocHV.Clear();
-            ucLopHocHV.Clear();
-            ucPhongHocHV.Clear();
-            ucThoiKhoaBieuHV.Clear();
-            ucThongTinCoBanHV.Clear();
-        }
-
-        private void LoadHocVien()
-        {
-            List<HocVienDTO> lst_HocVien = new List<HocVienDTO>();
-            lst_HocVien = _hv.get_HocVienBUS();
-            dgv_HocVien.DataSource = lst_HocVien;
-        }
-
-        private void enableControl(bool value)
-        {
-            ucThongTinCoBanHV.Enabled = value;
-            ucThoiKhoaBieuHV.Enabled = value;
-            ucPhongHocHV.Enabled = value;
-            ucLopHocHV.Enabled = value;
-            ucKhoaHocHV.Enabled = value;
-            ucCaHocHV.Enabled = value;
-            txt_MaHV.Enabled = value;
-        }
-
-        private void enableButton(bool value)
-        {
-            btn_DiemDanh.Enabled = value;
-            btn_Diem.Enabled = value;
-            btn_Them.Enabled = value;
-            btn_Sua.Enabled = value;
-            btn_Xoa.Enabled = value;
-        }
 
         private void FormHocVien_Load(object sender, EventArgs e)
         {
@@ -76,31 +40,51 @@ namespace QuanLyTrungTamNgoaiNgu
             LoadHocVien();
             enableControl(false);
         }
-
-        private void btn_Them_Click(object sender, EventArgs e)
-        {
-            Clear();
-            enableButton(false);
-            btn_Them.Enabled = true;
-            enableControl(false);
-            ucThongTinCoBanHV.Enabled = true;
-            txt_MaHV.Enabled = true;
-            _chucnang = 1;
-        }
-
         private void btn_DiemDanh_Click(object sender, EventArgs e)
         {
             FormLop frm_ChiTietLopHoc = new FormLop();
             frm_ChiTietLopHoc.Show();
         }
 
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            Clear();
+            enableButton(false);
+            btn_LamMoi.Enabled = true;
+            btn_Them.Enabled = true;
+            enableControl(false);
+            ucThongTinCoBanHV.Enabled = true;
+            _chucnang = 1;
+        }
+        private void btn_Tim_Click(object sender, EventArgs e)
+        {
+            List<HocVienDTO> lst_HocVien = new List<HocVienDTO>();
+            lst_HocVien = _hv.tim_HocVienDAO(txt_Tim.Text);
+            dgv_HocVien.DataSource = null;
+            dgv_HocVien.DataSource = lst_HocVien;
+        }
+
+        private void btn_LamMoi_Click(object sender, EventArgs e)
+        {
+            if (lst_HocVien.Count == 0)
+            {
+                txt_MaHV.Text = "HV01";
+            }
+            else
+            {
+                string strMaLonNhat = lst_HocVien.Max(o => o.MaHV);
+                int matieptheo = int.Parse(strMaLonNhat.Replace("HV", "")) + 1;
+                txt_MaHV.Text = "HV" + matieptheo.ToString("00");
+            }
+            dgv_HocVien.ClearSelection();
+        }
         private void btn_Huy_Click(object sender, EventArgs e)
         {
             Clear();
             enableButton(true);
             enableControl(false);
+            dgv_HocVien.ClearSelection();
         }
-
         private void btn_Luu_Click(object sender, EventArgs e)
         {
             switch (_chucnang)
@@ -115,9 +99,28 @@ namespace QuanLyTrungTamNgoaiNgu
                     SuaHocVien();
                     break;
             }
-
         }
-
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            enableButton(false);
+            btn_Sua.Enabled = true;
+            enableControl(true);
+            _chucnang = 3;
+        }
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn có muốn xóa học viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (r == DialogResult.Yes)
+            {
+                int result = _hv.xoa_HocVienBUS(_HocVienDaChon.MaHV);
+                if (result > 0)
+                {
+                    MessageBox.Show("Xóa học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else MessageBox.Show("Xóa học viên thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            LoadHocVien();
+        }
         private void dgv_HocVien_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_HocVien.SelectedRows.Count > 0)
@@ -131,32 +134,39 @@ namespace QuanLyTrungTamNgoaiNgu
             BindingChiTietHocVien();
         }
 
-        private void BindingChiTietHocVien()
+        #region
+        private void LoadHocVien()
         {
-            if (_HocVienDaChon != null)
-            {
-                txt_MaHV.Text = _HocVienDaChon.MaHV;
-                ucThongTinCoBanHV.HoTen = _HocVienDaChon.HoTen;
-                ucThongTinCoBanHV.GioiTinh = _HocVienDaChon.GioiTinh;
-                ucThongTinCoBanHV.NgaySinh = _HocVienDaChon.NgaySinh;
-                ucThongTinCoBanHV.Email = _HocVienDaChon.Email;
-                ucThongTinCoBanHV.SDT = _HocVienDaChon.SDT;
-                ucThongTinCoBanHV.DiaChi = _HocVienDaChon.DiaChi;
-            }
-            else
-            {
-                Clear();
-            }
+            lst_HocVien = _hv.get_HocVienBUS();
+            dgv_HocVien.DataSource = lst_HocVien;
         }
 
-        private void btn_Sua_Click(object sender, EventArgs e)
+        private void enableControl(bool value)
         {
-            enableButton(false);
-            btn_Sua.Enabled = true;
-            enableControl(false);
-            ucThongTinCoBanHV.Enabled = true;
-            txt_MaHV.Enabled = false;
-            _chucnang = 3;
+            ucThongTinCoBanHV.Enabled = value;
+            ucThoiKhoaBieuHV.Enabled = value;
+            ucPhongHocHV.Enabled = value;
+            ucLopHocHV.Enabled = value;
+            ucKhoaHocHV.Enabled = value;
+            ucCaHocHV.Enabled = value;
+        }
+
+        private void enableButton(bool value)
+        {
+            btn_DiemDanh.Enabled = value;
+            btn_LamMoi.Enabled = value;
+            btn_Them.Enabled = value;
+            btn_Sua.Enabled = value;
+            btn_Xoa.Enabled = value;
+        }
+        private void Clear()
+        {
+            ucCaHocHV.Clear();
+            ucKhoaHocHV.Clear();
+            ucLopHocHV.Clear();
+            ucPhongHocHV.Clear();
+            ucThoiKhoaBieuHV.Clear();
+            ucThongTinCoBanHV.Clear();
         }
 
         private void ThemHocVien()
@@ -219,33 +229,24 @@ namespace QuanLyTrungTamNgoaiNgu
             else MessageBox.Show("Chọn học viên cần xóa");
         }
 
-        private void btn_Xoa_Click(object sender, EventArgs e)
+        private void BindingChiTietHocVien()
         {
-            DialogResult r = MessageBox.Show("Bạn có muốn xóa học viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (r == DialogResult.Yes)
+            if (_HocVienDaChon != null)
             {
-                int result = _hv.xoa_HocVienBUS(_HocVienDaChon.MaHV);
-                if (result > 0)
-                {
-                    MessageBox.Show("Xóa học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else MessageBox.Show("Xóa học viên thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_MaHV.Text = _HocVienDaChon.MaHV;
+                ucThongTinCoBanHV.HoTen = _HocVienDaChon.HoTen;
+                ucThongTinCoBanHV.GioiTinh = _HocVienDaChon.GioiTinh;
+                ucThongTinCoBanHV.NgaySinh = _HocVienDaChon.NgaySinh;
+                ucThongTinCoBanHV.Email = _HocVienDaChon.Email;
+                ucThongTinCoBanHV.SDT = _HocVienDaChon.SDT;
+                ucThongTinCoBanHV.DiaChi = _HocVienDaChon.DiaChi;
             }
-            LoadHocVien();
+            else
+            {
+                Clear();
+            }
         }
+        #endregion
 
-        private void btn_Diem_Click(object sender, EventArgs e)
-        {
-            FormLop frm_ChiTietLopHoc = new FormLop();
-            frm_ChiTietLopHoc.Show();
-        }
-
-        private void btn_Tim_Click(object sender, EventArgs e)
-        {
-            List<HocVienDTO> lst_HocVien = new List<HocVienDTO>();
-            lst_HocVien = _hv.tim_HocVienDAO(txt_Tim.Text);
-            dgv_HocVien.DataSource = null;
-            dgv_HocVien.DataSource = lst_HocVien;
-        }
     }
 }

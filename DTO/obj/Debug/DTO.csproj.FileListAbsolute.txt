@@ -10,3 +10,7 @@ D:\code2\DTO\bin\Debug\DTO.dll
 D:\code2\DTO\bin\Debug\DTO.pdb
 D:\code2\DTO\obj\Debug\DTO.dll
 D:\code2\DTO\obj\Debug\DTO.pdb
+C:\Users\dunca_000\Desktop\New folder\DTO\bin\Debug\DTO.dll
+C:\Users\dunca_000\Desktop\New folder\DTO\bin\Debug\DTO.pdb
+C:\Users\dunca_000\Desktop\New folder\DTO\obj\Debug\DTO.dll
+C:\Users\dunca_000\Desktop\New folder\DTO\obj\Debug\DTO.pdb

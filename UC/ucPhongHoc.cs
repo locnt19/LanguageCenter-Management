@@ -25,8 +25,8 @@ namespace UC
 
         public string PhongHoc
         {
-            get;
-            set;
+            get { return this.cbb_PhongHoc.SelectedValue.ToString(); }
+            set { this.cbb_PhongHoc.SelectedValue = value; }
         }
 
         private void ucPhongHoc_Load(object sender, EventArgs e)

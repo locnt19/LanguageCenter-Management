@@ -209,6 +209,7 @@ namespace QuanLyTrungTamNgoaiNgu
             txt_Doc.ReadOnly = true;
             txt_Viet.ReadOnly = true;
             txt_HoTen.ReadOnly = true;
+            dgv_Lop.ClearSelection();
         }
     }
 }

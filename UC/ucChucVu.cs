@@ -25,8 +25,8 @@ namespace UC
 
         public string ChucVu
         {
-            get;
-            set;
+            get { return this.cbb_ChucVu.SelectedValue.ToString(); }
+            set { this.cbb_ChucVu.SelectedValue = value; }
         }
 
         private void ucChucVu_Load(object sender, EventArgs e)

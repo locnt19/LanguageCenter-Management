@@ -17,23 +17,36 @@ namespace QuanLyTrungTamNgoaiNgu
         TaiKhoanDTO tkchon = null;
         List<TaiKhoanDTO> ls_tk;
         TaiKhoanBUS tkbus = new TaiKhoanBUS();
+        TaiKhoanBUS _taikhoanBUS = new TaiKhoanBUS();
         List<TaiKhoanDTO> lstaikhoan = new List<TaiKhoanDTO>();
+        int _chucnang = 0; //1- Them, 2-Sua
+
         public FormTaiKhoan()
         {
-
             InitializeComponent();
             dgv_taikhoan.AutoGenerateColumns = false;
+            FormBorderStyle = FormBorderStyle.None;
+            dgv_taikhoan.Anchor = AnchorStyles.None;
+            dgv_taikhoan.AllowUserToAddRows = false;
+            dgv_taikhoan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_taikhoan.ReadOnly = true;
+            dgv_taikhoan.MultiSelect = false;
+            txt_TenTK.Enabled = false;
+            txt_matkhau.Enabled = false;
+            ucLoaiTaiKhoan.Enabled = false;
+            txt_matkhau.UseSystemPasswordChar = true;
+        }
+        private void FormTaiKhoan_Load(object sender, EventArgs e)
+        {
             LoadTaiKhoantheotentk();
             loadTaikhoan();
         }
-        TaiKhoanBUS _taikhoan = new TaiKhoanBUS();
 
         private void LoadTaiKhoantheotentk()
         {
             ls_tk = new List<TaiKhoanDTO>();
-            ls_tk = _taikhoan.get_TaiKhoanBUS(txtTentk.Text);
+            ls_tk = _taikhoanBUS.get_TaiKhoanBUS(txt_Tim.Text);
             dgv_taikhoan.DataSource = ls_tk;
-
         }
         private void refreshtk()
         {
@@ -43,31 +56,22 @@ namespace QuanLyTrungTamNgoaiNgu
         private void loadTaikhoan()
         {
             ls_tk = new List<TaiKhoanDTO>();
-            ls_tk = _taikhoan.load_TaiKhoanBUS();
+            ls_tk = _taikhoanBUS.load_TaiKhoanBUS();
             dgv_taikhoan.DataSource = ls_tk;
         }
-
-        private void FormTaiKhoan_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        
         private void BindingChiTiet()
         {
             if (tkchon != null)
             {
-                txt_TenloadTK.Text = tkchon.TenTK;
+                txt_TenTK.Text = tkchon.TenTK;
                 txt_matkhau.Text = tkchon.MatKhau;
-                txt_loaitk.Text = tkchon.LoaiTK;
+                ucLoaiTaiKhoan.LoaiTK = tkchon.LoaiTK;
             }
             else
             {
-                txt_TenloadTK.Text = "";
-                txt_matkhau.Text = "";
-                txt_loaitk.Text = "";
+                txt_TenTK.Text = string.Empty;
+                txt_matkhau.Text = string.Empty;
+                ucLoaiTaiKhoan.Clear();
             }
         }
         private void GetDataChiTiet()
@@ -76,9 +80,9 @@ namespace QuanLyTrungTamNgoaiNgu
             {
                 tkchon = new TaiKhoanDTO();
             }
-            tkchon.TenTK = txt_TenloadTK.Text;
+            tkchon.TenTK = txt_TenTK.Text;
             tkchon.MatKhau = txt_matkhau.Text;
-            tkchon.LoaiTK = txt_loaitk.Text;
+            tkchon.LoaiTK = ucLoaiTaiKhoan.LoaiTK;
         }
 
         private void btn_Timtk_Click(object sender, EventArgs e)
@@ -88,20 +92,26 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btn_Themtk_Click(object sender, EventArgs e)
         {
-            if (tkchon != null)
-            {
-                GetDataChiTiet();
-                if (tkbus.add_TaiKhoanBUS(tkchon) != 0)
-                {
-                    MessageBox.Show("Thêm mới thành công");
-                    refreshtk();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm mới thất bại");
-                    tkchon = null;
-                }
-            }
+            //if (tkchon != null)
+            //{
+            //    GetDataChiTiet();
+            //    if (tkbus.add_TaiKhoanBUS(tkchon) != 0)
+            //    {
+            //        MessageBox.Show("Thêm mới thành công");
+            //        refreshtk();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Thêm mới thất bại");
+            //        tkchon = null;
+            //    }
+            //}
+            txt_TenTK.Enabled = true;
+            txt_matkhau.Enabled = true;
+            ucLoaiTaiKhoan.Enabled = true;
+            dgv_taikhoan.ClearSelection();
+            _chucnang = 1;
+
         }
 
         private void btn_Doimk_Click(object sender, EventArgs e)
@@ -111,14 +121,12 @@ namespace QuanLyTrungTamNgoaiNgu
                 GetDataChiTiet();
                 if (tkbus.update_TaiKhoanBUS(tkchon) != 0)
                 {
-
                     MessageBox.Show("Cập nhật thành công");
                     refreshtk();
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật thất bại");
-
                 }
             }
         }
@@ -130,20 +138,15 @@ namespace QuanLyTrungTamNgoaiNgu
                 GetDataChiTiet();
                 if (tkbus.delete_TaiKhoanBUS(tkchon) != 0)
                 {
-
                     MessageBox.Show("Xóa thành công !");
                     refreshtk();
                 }
                 else
                 {
-
                     MessageBox.Show("Vui lòng chọn tài khoản cần xóa !");
-
                 }
-
             }
-        }      
-
+        }
         private void dgv_taikhoan_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_taikhoan.SelectedRows.Count > 0)
@@ -158,5 +161,34 @@ namespace QuanLyTrungTamNgoaiNgu
             BindingChiTiet();
         }
 
+        private void btn_Luu_Click(object sender, EventArgs e)
+        {
+            switch (_chucnang)
+            {
+                case 1:
+                    if (txt_TenTK.Text.Trim() == "" || txt_matkhau.Text.Trim() == "")
+                    {
+                        MessageBox.Show("Vui lòng nhập tài khoản và mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        int r = _taikhoanBUS.insert_TaiKhoanBUS(txt_TenTK.Text, txt_matkhau.Text, ucLoaiTaiKhoan.LoaiTK);
+                        if (r > 0)
+                        {
+                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            loadTaikhoan();
+                            txt_TenTK.Enabled = false;
+                            txt_matkhau.Enabled = false;
+                            ucLoaiTaiKhoan.Enabled = false;
+                        }
+                        else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

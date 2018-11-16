@@ -64,6 +64,7 @@
     <Compile Include="DataProvider.cs" />
     <Compile Include="KetQuaHocTap.cs" />
     <Compile Include="KhoaHoc.cs" />
+    <Compile Include="LoaiTaiKhoan.cs" />
     <Compile Include="LopHoc.cs" />
     <Compile Include="MonHoc.cs" />
     <Compile Include="PhongHoc.cs" />
@@ -103,6 +104,12 @@
     </Compile>
     <Compile Include="ucKhoaHoc.Designer.cs">
       <DependentUpon>ucKhoaHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucLoaiTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucLoaiTaiKhoan.Designer.cs">
+      <DependentUpon>ucLoaiTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="ucLopHoc.cs">
       <SubType>UserControl</SubType>
@@ -148,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucKhoaHoc.resx">
       <DependentUpon>ucKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucLoaiTaiKhoan.resx">
+      <DependentUpon>ucLoaiTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucLopHoc.resx">
       <DependentUpon>ucLopHoc.cs</DependentUpon>

@@ -53,3 +53,19 @@ D:\code2\UC\obj\Debug\UC.ucThongTinCoBan.resources
 D:\code2\UC\obj\Debug\UC.csproj.GenerateResource.Cache
 D:\code2\UC\obj\Debug\UC.dll
 D:\code2\UC\obj\Debug\UC.pdb
+C:\Users\dunca_000\Desktop\New folder\UC\bin\Debug\UC.dll
+C:\Users\dunca_000\Desktop\New folder\UC\bin\Debug\UC.pdb
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.Properties.Resources.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucCaHoc.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucChucVu.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucDangNhap.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucKetQuaHocTap.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucKhoaHoc.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucLopHoc.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucPhongHoc.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucThoiKhoaBieu.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucThongTinCoBan.resources
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.csproj.GenerateResource.Cache
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.dll
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.pdb
+C:\Users\dunca_000\Desktop\New folder\UC\obj\Debug\UC.ucLoaiTaiKhoan.resources

@@ -19,20 +19,21 @@ namespace BUS
         {
             return _tk.load_TaiKhoanDAO();
         }
+        public int insert_TaiKhoanBUS(string TenTK, string MatKhau, string LoaiTK)
+        {
+            return _tk.insert_TaiKhoanDAO(TenTK, MatKhau, LoaiTK);
+        }
         public int add_TaiKhoanBUS(TaiKhoanDTO tkdto)
         {
-            TaiKhoanDAO tkdao = new TaiKhoanDAO();
-            return tkdao.insert_TaiKhoanDAO(tkdto);
+            return _tk.insert_TaiKhoanDAO(tkdto);
         }
         public int update_TaiKhoanBUS(TaiKhoanDTO tkdto)
         {
-            TaiKhoanDAO tkdao = new TaiKhoanDAO();
-            return tkdao.update_MatKhauvaloaiTaiKhoanDAO(tkdto);
+            return _tk.update_MatKhauvaloaiTaiKhoanDAO(tkdto);
         }
         public int delete_TaiKhoanBUS(TaiKhoanDTO tkdto)
         {
-            TaiKhoanDAO tkdao = new TaiKhoanDAO();
-            return tkdao.delete_TaiKhoanDAO(tkdto);
+            return _tk.delete_TaiKhoanDAO(tkdto);
         }
 
     }

@@ -25,8 +25,8 @@ namespace UC
 
         public string KhoaHoc
         {
-            get;
-            set;
+            get { return this.cbb_KhoaHoc.SelectedValue.ToString(); }
+            set { this.cbb_KhoaHoc.SelectedValue = value; }
         }
 
         private void ucKhoaHoc_Load(object sender, EventArgs e)

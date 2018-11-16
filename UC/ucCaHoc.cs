@@ -25,8 +25,8 @@ namespace UC
 
         public string CaHoc
         {
-            get;
-            set;
+            get { return this.cbb_CaHoc.SelectedValue.ToString(); }
+            set { this.cbb_CaHoc.SelectedValue = value; }
         }
 
         private void ucCaHoc_Load(object sender, EventArgs e)

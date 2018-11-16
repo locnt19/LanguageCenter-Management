@@ -107,10 +107,10 @@ CREATE TABLE CaHoc
 	STT int DEFAULT 1
 )
 
-INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA01', N'Sáng từ 8:00 AM đến 9:30 AM')
-INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA02', N'Sáng từ 10:00 AM đến 11:30 AM')
-INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA03', N'Chiều từ 5:30 PM đến 7:00 PM')
-INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA04', N'Sáng từ 7:30 PM đến 9:00 PM')
+INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA01', N'Sáng từ 8:00-9:30')
+INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA02', N'Sáng từ 10:00-11:30')
+INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA03', N'Chiều từ 17:30-19:00')
+INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA04', N'Sáng từ 19:30-21:00')
 
 CREATE TABLE KhoaHoc
 (
