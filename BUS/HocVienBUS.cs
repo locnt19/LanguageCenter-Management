@@ -31,5 +31,10 @@ namespace BUS
         {
             return _hv.xoa_HocVienDAO(MaHV);
         }
+
+        public List<HocVienDTO> tim_HocVienDAO(string HoTen)
+        {
+            return _hv.tim_HocVienDAO(HoTen);
+        }
     }
 }

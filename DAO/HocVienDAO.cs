@@ -81,5 +81,29 @@ namespace DAO
             conn.Close();
             return lst_HocVien;
         }
+
+        public List<HocVienDTO> tim_HocVienDAO(string HoTen)
+        {
+            List<HocVienDTO> lst_HocVien = new List<HocVienDTO>();
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string query = "Select * From HocVien HV Where HV.HoTen like '%" + HoTen + "%'";
+            SqlDataReader sdr = DataProvider.ThucHienTruyVan(query, conn);
+            while (sdr.Read())
+            {
+                HocVienDTO hv = new HocVienDTO();
+                hv.MaHV = sdr["MaHV"].ToString();
+                hv.HoTen = sdr["HoTen"].ToString();
+                hv.GioiTinh = (int)sdr["GioiTinh"];
+                hv.NgaySinh = (DateTime)sdr["NgaySinh"];
+                hv.Email = sdr["Email"].ToString();
+                hv.SDT = sdr["SDT"].ToString();
+                hv.DiaChi = sdr["DiaChi"].ToString();
+                hv.STT = (int)sdr["STT"];
+                lst_HocVien.Add(hv);
+            }
+            sdr.Close();
+            conn.Close();
+            return lst_HocVien;
+        }
     }
 }

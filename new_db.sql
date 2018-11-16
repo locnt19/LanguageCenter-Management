@@ -250,7 +250,7 @@ INSERT INTO ChiTietLop(MaLop, MaHV) VALUES('LOP02', 'HV05')
 
 CREATE TABLE DiemDanh
 (
-	MaLop char(10),
+	MaLop char(10) FOREIGN KEY REFERENCES Lop(MaLop),
 	MaHV char(10) FOREIGN KEY REFERENCES HocVien(MaHV),
 	SoNgayVang int DEFAULT 0,
 	STT int DEFAULT 1,

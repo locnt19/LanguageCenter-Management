@@ -25,8 +25,8 @@ namespace UC
 
         public string LopHoc
         {
-            get;
-            set;
+            get { return this.cbb_LopHoc.SelectedValue.ToString(); }
+            set { this.cbb_LopHoc.SelectedItem = value; }
         }
 
         private void ucLopHoc_Load(object sender, EventArgs e)

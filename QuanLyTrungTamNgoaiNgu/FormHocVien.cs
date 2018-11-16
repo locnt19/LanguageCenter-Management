@@ -29,7 +29,7 @@ namespace QuanLyTrungTamNgoaiNgu
         }
 
         HocVienBUS _hv = new HocVienBUS();
-        int _chucnang = 0; // 1-Them, 2-Xoa, 3-Sua
+        int _chucnang = 0; // 1-Them, 2-Sua
         HocVienDTO _HocVienDaChon;
 
         private void Clear()
@@ -90,8 +90,8 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btn_DiemDanh_Click(object sender, EventArgs e)
         {
-            //FormKetQuaHocTap frm_KQHT = new FormKetQuaHocTap();
-            //frm_KQHT.Show();
+            FormLop frm_ChiTietLopHoc = new FormLop();
+            frm_ChiTietLopHoc.Show();
         }
 
         private void btn_Huy_Click(object sender, EventArgs e)
@@ -112,9 +112,6 @@ namespace QuanLyTrungTamNgoaiNgu
                     ThemHocVien();
                     break;
                 case 2:
-                    //XoaHocVien();
-                    break;
-                case 3:
                     SuaHocVien();
                     break;
             }
@@ -214,15 +211,41 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             if (dgv_HocVien.SelectedRows.Count > 0)
             {
-                dgv_HocVien.Rows.Remove(dgv_HocVien.SelectedRows[0]); // lỗi
+                int rowIndex = dgv_HocVien.CurrentCell.RowIndex;
+                dgv_HocVien.Rows.RemoveAt(rowIndex); // lỗi
+                dgv_HocVien.Refresh();
+                MessageBox.Show("Tạm xóa thành công");
             }
             else MessageBox.Show("Chọn học viên cần xóa");
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            //XoaHocVien();
-            MessageBox.Show("Xóa thành công");
+            DialogResult r = MessageBox.Show("Bạn có muốn xóa học viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (r == DialogResult.Yes)
+            {
+                int result = _hv.xoa_HocVienBUS(_HocVienDaChon.MaHV);
+                if (result > 0)
+                {
+                    MessageBox.Show("Xóa học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else MessageBox.Show("Xóa học viên thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            LoadHocVien();
+        }
+
+        private void btn_Diem_Click(object sender, EventArgs e)
+        {
+            FormLop frm_ChiTietLopHoc = new FormLop();
+            frm_ChiTietLopHoc.Show();
+        }
+
+        private void btn_Tim_Click(object sender, EventArgs e)
+        {
+            List<HocVienDTO> lst_HocVien = new List<HocVienDTO>();
+            lst_HocVien = _hv.tim_HocVienDAO(txt_Tim.Text);
+            dgv_HocVien.DataSource = null;
+            dgv_HocVien.DataSource = lst_HocVien;
         }
     }
 }

@@ -43,7 +43,7 @@
     <Compile Include="KetQuaDTO.cs" />
     <Compile Include="KhoaHocDTO.cs" />
     <Compile Include="LoaiTaiKhoanDTO.cs" />
-    <Compile Include="LopHocDTO.cs" />
+    <Compile Include="ChiTietLopHocDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

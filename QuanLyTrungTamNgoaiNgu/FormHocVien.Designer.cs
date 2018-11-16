@@ -85,6 +85,7 @@
             this.btn_Diem.TabIndex = 11;
             this.btn_Diem.Text = "Điểm";
             this.btn_Diem.UseVisualStyleBackColor = true;
+            this.btn_Diem.Click += new System.EventHandler(this.btn_Diem_Click);
             // 
             // btn_DiemDanh
             // 
@@ -248,6 +249,7 @@
             this.btn_Tim.Size = new System.Drawing.Size(75, 33);
             this.btn_Tim.TabIndex = 9;
             this.btn_Tim.Text = "Tìm";
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // txt_Tim
             // 
@@ -300,7 +302,7 @@
             // 
             this.ucLopHocHV.Font = new System.Drawing.Font("Tahoma", 15.75F);
             this.ucLopHocHV.Location = new System.Drawing.Point(463, 35);
-            this.ucLopHocHV.LopHoc = "UC.LopHoc";
+            this.ucLopHocHV.LopHoc = "LOP01     ";
             this.ucLopHocHV.Margin = new System.Windows.Forms.Padding(6);
             this.ucLopHocHV.Name = "ucLopHocHV";
             this.ucLopHocHV.Size = new System.Drawing.Size(257, 36);
