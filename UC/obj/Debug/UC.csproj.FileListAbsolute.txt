@@ -23,7 +23,6 @@ B:\HK5\QuanLyTrungTamNgoaiNgu\UC\obj\Debug\UC.dll
 B:\HK5\QuanLyTrungTamNgoaiNgu\UC\obj\Debug\UC.pdb
 C:\Users\dunca_000\Desktop\C#\UC\bin\Debug\UC.dll
 C:\Users\dunca_000\Desktop\C#\UC\bin\Debug\UC.pdb
-C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.csprojResolveAssemblyReference.cache
 C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.Properties.Resources.resources
 C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.ucCaHoc.resources
 C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.ucChucVu.resources
@@ -37,3 +36,4 @@ C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.ucThongTinCoBan.resources
 C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.csproj.GenerateResource.Cache
 C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.dll
 C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.pdb
+C:\Users\dunca_000\Desktop\C#\UC\obj\Debug\UC.csprojResolveAssemblyReference.cache

@@ -1,2 +1,1 @@
-select CTL.MaLop, HV.MaHV, HV.HoTen, DD.SoNgayVang from ChiTietLop CTL, HocVien HV, DiemDanh DD where  CTL.MaLop = DD.MaLop and DD.MaHV = CTL.MaHV
-Select DD.MaLop, DD.MaHV, HV.HoTen, L.PhongHoc, L.MaTKB, DD.SoNgayVang From DiemDanh DD, Lop L, HocVien HV Where DD.MaLop = L.MaLop and DD.MaHV = HV.MaHV and L.MaLop = 'LOP01'
+Select DD.MaLop, DD.MaHV, HV.HoTen, L.PhongHoc, L.MaTKB, DD.SoNgayVang, KQ.Nghe, KQ.Noi, KQ.Doc, KQ.Viet From DiemDanh DD, Lop L, HocVien HV, KetQua KQ Where L.MaLop = 'LOP01' and DD.MaLop = L.MaLop and KQ.MaHV = HV.MaHV and L.MaLop = KQ.MaLop

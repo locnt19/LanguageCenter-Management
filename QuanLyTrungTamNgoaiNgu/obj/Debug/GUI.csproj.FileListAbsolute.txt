@@ -31,8 +31,6 @@ B:\HK5\QuanLyTrungTamNgoaiNgu\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.Genera
 B:\HK5\QuanLyTrungTamNgoaiNgu\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
 B:\HK5\QuanLyTrungTamNgoaiNgu\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe.config
-C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
-C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.pdb
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.dll
@@ -46,8 +44,73 @@ C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.pdb
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormDangNhap.resources
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormHocVien.resources
+C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormLop.resources
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormMain.resources
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormNhanVien.resources
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.Properties.Resources.resources
 C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.GenerateResource.Cache
-C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormLop.resources
+C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
+C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe.config
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.pdb
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.dll
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\DTO.dll
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\UC.dll
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.dll
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.pdb
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\DTO.pdb
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\UC.pdb
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.pdb
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormDangNhap.resources
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormHocVien.resources
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormLop.resources
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormMain.resources
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormNhanVien.resources
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.Properties.Resources.resources
+C:\Users\dunca_000\Desktop\backup\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe.config
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.pdb
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.dll
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\DTO.dll
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\UC.dll
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.dll
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.pdb
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\DTO.pdb
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\UC.pdb
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.pdb
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormDangNhap.resources
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormHocVien.resources
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormLop.resources
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormMain.resources
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormNhanVien.resources
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.Properties.Resources.resources
+C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe.config
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.pdb
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.dll
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\DTO.dll
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\UC.dll
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.dll
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.pdb
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\DTO.pdb
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\UC.pdb
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\bin\Debug\DAO.pdb
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormDangNhap.resources
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormHocVien.resources
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormLop.resources
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormMain.resources
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormNhanVien.resources
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.Properties.Resources.resources
+C:\Users\dunca_000\Desktop\clone C#\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.GenerateResource.Cache
