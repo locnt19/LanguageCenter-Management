@@ -5,10 +5,3 @@ B:\HK5\QuanLyTrungTamNgoaiNgu\DAO\bin\Debug\DTO.pdb
 B:\HK5\QuanLyTrungTamNgoaiNgu\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 B:\HK5\QuanLyTrungTamNgoaiNgu\DAO\obj\Debug\DAO.dll
 B:\HK5\QuanLyTrungTamNgoaiNgu\DAO\obj\Debug\DAO.pdb
-C:\Users\dunca_000\Desktop\C#\DAO\bin\Debug\DAO.dll
-C:\Users\dunca_000\Desktop\C#\DAO\bin\Debug\DAO.pdb
-C:\Users\dunca_000\Desktop\C#\DAO\bin\Debug\DTO.dll
-C:\Users\dunca_000\Desktop\C#\DAO\bin\Debug\DTO.pdb
-C:\Users\dunca_000\Desktop\C#\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
-C:\Users\dunca_000\Desktop\C#\DAO\obj\Debug\DAO.dll
-C:\Users\dunca_000\Desktop\C#\DAO\obj\Debug\DAO.pdb

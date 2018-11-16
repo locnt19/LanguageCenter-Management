@@ -7,12 +7,3 @@ B:\HK5\QuanLyTrungTamNgoaiNgu\BUS\bin\Debug\DTO.pdb
 B:\HK5\QuanLyTrungTamNgoaiNgu\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 B:\HK5\QuanLyTrungTamNgoaiNgu\BUS\obj\Debug\BUS.dll
 B:\HK5\QuanLyTrungTamNgoaiNgu\BUS\obj\Debug\BUS.pdb
-C:\Users\dunca_000\Desktop\C#\BUS\bin\Debug\BUS.dll
-C:\Users\dunca_000\Desktop\C#\BUS\bin\Debug\BUS.pdb
-C:\Users\dunca_000\Desktop\C#\BUS\bin\Debug\DAO.dll
-C:\Users\dunca_000\Desktop\C#\BUS\bin\Debug\DTO.dll
-C:\Users\dunca_000\Desktop\C#\BUS\bin\Debug\DAO.pdb
-C:\Users\dunca_000\Desktop\C#\BUS\bin\Debug\DTO.pdb
-C:\Users\dunca_000\Desktop\C#\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
-C:\Users\dunca_000\Desktop\C#\BUS\obj\Debug\BUS.dll
-C:\Users\dunca_000\Desktop\C#\BUS\obj\Debug\BUS.pdb

@@ -10,9 +10,9 @@ namespace BUS
     public class LopHocBUS
     {
         LopHocDAO _lh = new LopHocDAO();
-        public List<LopHocDTO> get_LopHocBUS(string MaLop)
+        public List<LopHocDTO> get_LopHocBUS()
         {
-            return _lh.get_LopHocDAO(MaLop);
+            return _lh.get_LopHocDAO();
         }
     }
 }

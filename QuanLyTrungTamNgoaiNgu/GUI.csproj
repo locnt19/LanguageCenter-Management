@@ -56,12 +56,6 @@
     <Compile Include="FormHocVien.Designer.cs">
       <DependentUpon>FormHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLop.Designer.cs">
-      <DependentUpon>FormLop.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,9 +75,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHocVien.resx">
       <DependentUpon>FormHocVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLop.resx">
-      <DependentUpon>FormLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
