@@ -140,8 +140,6 @@ C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.cspro
 C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
 C:\Users\dunca_000\Desktop\New folder\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
 C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe.config
-C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
-C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
 C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.exe
 C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\bin\Debug\QuanLyTrungTamNgoaiNgu.pdb
 C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\bin\Debug\BUS.dll
@@ -163,3 +161,5 @@ C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrung
 C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormTaiKhoan.resources
 C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.Properties.Resources.resources
 C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
+C:\Users\dunca_000\Desktop\19112018\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb

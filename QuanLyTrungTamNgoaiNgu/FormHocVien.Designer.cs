@@ -51,10 +51,11 @@
             this.txt_Tim = new System.Windows.Forms.TextBox();
             this.ucPhongHocHV = new UC.ucPhongHoc();
             this.ucThoiKhoaBieuHV = new UC.ucThoiKhoaBieu();
-            this.ucKhoaHocHV = new UC.ucKhoaHoc();
             this.ucCaHocHV = new UC.ucCaHoc();
             this.ucLopHocHV = new UC.ucLopHoc();
             this.ucThongTinCoBanHV = new UC.ucThongTinCoBan();
+            this.ucKhoaHocHV = new UC.ucKhoaHoc();
+            this.lbl_KhoaHoc = new System.Windows.Forms.Label();
             this.grb_control.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HocVien)).BeginInit();
             this.grb_Thongtin.SuspendLayout();
@@ -208,13 +209,14 @@
             // 
             // grb_Thongtin
             // 
+            this.grb_Thongtin.Controls.Add(this.lbl_KhoaHoc);
+            this.grb_Thongtin.Controls.Add(this.ucKhoaHocHV);
             this.grb_Thongtin.Controls.Add(this.label2);
             this.grb_Thongtin.Controls.Add(this.txt_MaHV);
             this.grb_Thongtin.Controls.Add(this.btn_Tim);
             this.grb_Thongtin.Controls.Add(this.txt_Tim);
             this.grb_Thongtin.Controls.Add(this.ucPhongHocHV);
             this.grb_Thongtin.Controls.Add(this.ucThoiKhoaBieuHV);
-            this.grb_Thongtin.Controls.Add(this.ucKhoaHocHV);
             this.grb_Thongtin.Controls.Add(this.ucCaHocHV);
             this.grb_Thongtin.Controls.Add(this.ucLopHocHV);
             this.grb_Thongtin.Controls.Add(this.ucThongTinCoBanHV);
@@ -264,7 +266,7 @@
             this.ucPhongHocHV.Location = new System.Drawing.Point(436, 229);
             this.ucPhongHocHV.Margin = new System.Windows.Forms.Padding(6);
             this.ucPhongHocHV.Name = "ucPhongHocHV";
-            this.ucPhongHocHV.PhongHoc = "UC.PhongHoc";
+            this.ucPhongHocHV.PhongHoc = "F1.1      ";
             this.ucPhongHocHV.Size = new System.Drawing.Size(284, 36);
             this.ucPhongHocHV.TabIndex = 6;
             // 
@@ -276,21 +278,11 @@
             this.ucThoiKhoaBieuHV.Name = "ucThoiKhoaBieuHV";
             this.ucThoiKhoaBieuHV.Size = new System.Drawing.Size(363, 34);
             this.ucThoiKhoaBieuHV.TabIndex = 7;
-            this.ucThoiKhoaBieuHV.ThoiKhoaBieu = "UC.ThoiKhoaBieu";
-            // 
-            // ucKhoaHocHV
-            // 
-            this.ucKhoaHocHV.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucKhoaHocHV.KhoaHoc = "UC.KhoaHoc";
-            this.ucKhoaHocHV.Location = new System.Drawing.Point(406, 101);
-            this.ucKhoaHocHV.Margin = new System.Windows.Forms.Padding(6);
-            this.ucKhoaHocHV.Name = "ucKhoaHocHV";
-            this.ucKhoaHocHV.Size = new System.Drawing.Size(314, 35);
-            this.ucKhoaHocHV.TabIndex = 4;
+            this.ucThoiKhoaBieuHV.ThoiKhoaBieu = "TKB01     ";
             // 
             // ucCaHocHV
             // 
-            this.ucCaHocHV.CaHoc = "UC.CaHoc";
+            this.ucCaHocHV.CaHoc = "CA01      ";
             this.ucCaHocHV.Font = new System.Drawing.Font("Tahoma", 15.75F);
             this.ucCaHocHV.Location = new System.Drawing.Point(431, 166);
             this.ucCaHocHV.Margin = new System.Windows.Forms.Padding(6);
@@ -322,6 +314,25 @@
             this.ucThongTinCoBanHV.SDT = "";
             this.ucThongTinCoBanHV.Size = new System.Drawing.Size(347, 294);
             this.ucThongTinCoBanHV.TabIndex = 1;
+            // 
+            // ucKhoaHocHV
+            // 
+            this.ucKhoaHocHV.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucKhoaHocHV.KhoaHoc = "KH01      ";
+            this.ucKhoaHocHV.Location = new System.Drawing.Point(518, 101);
+            this.ucKhoaHocHV.Margin = new System.Windows.Forms.Padding(6);
+            this.ucKhoaHocHV.Name = "ucKhoaHocHV";
+            this.ucKhoaHocHV.Size = new System.Drawing.Size(202, 35);
+            this.ucKhoaHocHV.TabIndex = 24;
+            // 
+            // lbl_KhoaHoc
+            // 
+            this.lbl_KhoaHoc.AutoSize = true;
+            this.lbl_KhoaHoc.Location = new System.Drawing.Point(413, 106);
+            this.lbl_KhoaHoc.Name = "lbl_KhoaHoc";
+            this.lbl_KhoaHoc.Size = new System.Drawing.Size(105, 25);
+            this.lbl_KhoaHoc.TabIndex = 25;
+            this.lbl_KhoaHoc.Text = "Khóa học:";
             // 
             // FormHocVien
             // 
@@ -366,7 +377,6 @@
         private System.Windows.Forms.GroupBox grb_Thongtin;
         private UC.ucPhongHoc ucPhongHocHV;
         private UC.ucThoiKhoaBieu ucThoiKhoaBieuHV;
-        private UC.ucKhoaHoc ucKhoaHocHV;
         private UC.ucCaHoc ucCaHocHV;
         private UC.ucLopHoc ucLopHocHV;
         private UC.ucThongTinCoBan ucThongTinCoBanHV;
@@ -374,5 +384,7 @@
         private System.Windows.Forms.TextBox txt_Tim;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_MaHV;
+        private UC.ucKhoaHoc ucKhoaHocHV;
+        private System.Windows.Forms.Label lbl_KhoaHoc;
     }
 }

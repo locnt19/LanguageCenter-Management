@@ -210,7 +210,7 @@
             // ucLoaiTaiKhoan
             // 
             this.ucLoaiTaiKhoan.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.ucLoaiTaiKhoan.LoaiTK = ".         ";
+            this.ucLoaiTaiKhoan.LoaiTK = ".";
             this.ucLoaiTaiKhoan.Location = new System.Drawing.Point(133, 189);
             this.ucLoaiTaiKhoan.Margin = new System.Windows.Forms.Padding(6);
             this.ucLoaiTaiKhoan.Name = "ucLoaiTaiKhoan";
@@ -237,6 +237,7 @@
             this.btn_Huy.TabIndex = 36;
             this.btn_Huy.Text = "Hủy";
             this.btn_Huy.UseVisualStyleBackColor = true;
+            this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
             // 
             // FormTaiKhoan
             // 

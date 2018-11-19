@@ -30,6 +30,8 @@ namespace QuanLyTrungTamNgoaiNgu
             dgv_bienlai.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_bienlai.ReadOnly = true;
             dgv_bienlai.MultiSelect = false;
+            dtp_Ngaylap.Format = DateTimePickerFormat.Custom;
+            dtp_Ngaylap.CustomFormat = "dd/MM/yyyy";
             //txt_TenTK.Enabled = false;
             //txt_matkhau.Enabled = false;
             //ucLoaiTaiKhoan.Enabled = false;
@@ -67,7 +69,7 @@ namespace QuanLyTrungTamNgoaiNgu
                 txt_MaBL.Text = blchon.MaBienLai;
                 txt_MaHv.Text = blchon.MaHV;
                 txt_TongTien.Text = blchon.TongThanhToan.ToString();
-                cbb_Nguoilap.Text = blchon.NguoiLap;
+                //cbb_Nguoilap.Text = blchon.NguoiLap;
                 dtp_Ngaylap.Text = blchon.NgayLap.ToString(); ;
 
             }
@@ -88,7 +90,7 @@ namespace QuanLyTrungTamNgoaiNgu
             txt_MaBL.Text = blchon.MaBienLai;
             txt_MaHv.Text = blchon.MaHV;
             txt_TongTien.Text = blchon.TongThanhToan.ToString();
-            cbb_Nguoilap.Text = blchon.NguoiLap;
+            //cbb_Nguoilap.Text = blchon.NguoiLap;
             dtp_Ngaylap.Text = blchon.NgayLap.ToString(); ;
         }
 

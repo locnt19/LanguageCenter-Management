@@ -38,8 +38,8 @@ namespace QuanLyTrungTamNgoaiNgu
         }
         private void FormTaiKhoan_Load(object sender, EventArgs e)
         {
-            LoadTaiKhoantheotentk();
-            loadTaikhoan();
+            LoadTaiKhoantheotentk(); // Tìm
+            loadTaikhoan(); // Load dữ liệu
         }
 
         private void LoadTaiKhoantheotentk()
@@ -92,43 +92,23 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btn_Themtk_Click(object sender, EventArgs e)
         {
-            //if (tkchon != null)
-            //{
-            //    GetDataChiTiet();
-            //    if (tkbus.add_TaiKhoanBUS(tkchon) != 0)
-            //    {
-            //        MessageBox.Show("Thêm mới thành công");
-            //        refreshtk();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Thêm mới thất bại");
-            //        tkchon = null;
-            //    }
-            //}
             txt_TenTK.Enabled = true;
             txt_matkhau.Enabled = true;
             ucLoaiTaiKhoan.Enabled = true;
+            btn_Sua.Enabled = false;
+            btn_Xoa.Enabled = false;
             dgv_taikhoan.ClearSelection();
             _chucnang = 1;
-
         }
 
         private void btn_Doimk_Click(object sender, EventArgs e)
         {
-            if (tkchon != null)
-            {
-                GetDataChiTiet();
-                if (tkbus.update_TaiKhoanBUS(tkchon) != 0)
-                {
-                    MessageBox.Show("Cập nhật thành công");
-                    refreshtk();
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại");
-                }
-            }
+            txt_TenTK.Enabled = false;
+            txt_matkhau.Enabled = true;
+            ucLoaiTaiKhoan.Enabled = true;
+            btn_Xoa.Enabled = false;
+            btn_Them.Enabled = false;
+            _chucnang = 2;
         }
 
         private void btn_Xoatk_Click(object sender, EventArgs e)
@@ -166,6 +146,7 @@ namespace QuanLyTrungTamNgoaiNgu
             switch (_chucnang)
             {
                 case 1:
+                    #region Thêm tài khoản
                     if (txt_TenTK.Text.Trim() == "" || txt_matkhau.Text.Trim() == "")
                     {
                         MessageBox.Show("Vui lòng nhập tài khoản và mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -184,11 +165,22 @@ namespace QuanLyTrungTamNgoaiNgu
                         else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     break;
+                    #endregion
                 case 2:
                     break;
                 default:
                     break;
             }
+        }
+
+        private void btn_Huy_Click(object sender, EventArgs e)
+        {
+            txt_TenTK.Enabled = false;
+            txt_matkhau.Enabled = false;
+            ucLoaiTaiKhoan.Enabled = false;
+            btn_Sua.Enabled = true;
+            btn_Xoa.Enabled = true;
+            btn_Them.Enabled = true;
         }
     }
 }

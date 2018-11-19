@@ -23,13 +23,9 @@ namespace BUS
         {
             return _tk.insert_TaiKhoanDAO(TenTK, MatKhau, LoaiTK);
         }
-        public int add_TaiKhoanBUS(TaiKhoanDTO tkdto)
+        public int update_TaiKhoanBUS(string TenTK, string MatKhau, string LoaiTK)
         {
-            return _tk.insert_TaiKhoanDAO(tkdto);
-        }
-        public int update_TaiKhoanBUS(TaiKhoanDTO tkdto)
-        {
-            return _tk.update_MatKhauvaloaiTaiKhoanDAO(tkdto);
+            return _tk.update_MatKhauvaloaiTaiKhoanDAO(TenTK, MatKhau, LoaiTK);
         }
         public int delete_TaiKhoanBUS(TaiKhoanDTO tkdto)
         {

@@ -67,6 +67,7 @@
     <Compile Include="LoaiTaiKhoan.cs" />
     <Compile Include="LopHoc.cs" />
     <Compile Include="MonHoc.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="PhongHoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -117,6 +118,12 @@
     <Compile Include="ucLopHoc.Designer.cs">
       <DependentUpon>ucLopHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucNhanVien.Designer.cs">
+      <DependentUpon>ucNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucPhongHoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucLopHoc.resx">
       <DependentUpon>ucLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucNhanVien.resx">
+      <DependentUpon>ucNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucPhongHoc.resx">
       <DependentUpon>ucPhongHoc.cs</DependentUpon>

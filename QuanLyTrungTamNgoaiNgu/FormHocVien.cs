@@ -149,6 +149,7 @@ namespace QuanLyTrungTamNgoaiNgu
             ucLopHocHV.Enabled = value;
             ucKhoaHocHV.Enabled = value;
             ucCaHocHV.Enabled = value;
+            lbl_KhoaHoc.Enabled = value;
         }
 
         private void enableButton(bool value)

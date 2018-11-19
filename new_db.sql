@@ -6,7 +6,7 @@ GO
 
 CREATE TABLE HocVien
 (
-  MaHV char(10) PRIMARY KEY,
+  MaHV varchar(10) PRIMARY KEY,
   HoTen nvarchar(50) NOT NULL,
   GioiTinh int NOT NULL,
   NgaySinh date NOT NULL,
@@ -26,7 +26,7 @@ INSERT INTO HocVien (MaHV, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi) VALUES
 
 CREATE TABLE LoaiTaiKhoan
 (
-	MaLoai char(10) PRIMARY KEY,
+	MaLoai varchar(10) PRIMARY KEY,
 	TenLoai nvarchar(20) NOT NULL,
 	MoTa nvarchar(50) NOT NULL,
 	STT int DEFAULT 1
@@ -41,9 +41,9 @@ INSERT INTO LoaiTaiKhoan(MaLoai, TenLoai, MoTa) VALUES('KT', N'Kế toán', 'MoT
 
 CREATE TABLE TaiKhoan 
 (
-	TenTK char(32) PRIMARY KEY,
-	MatKhau char(32) NOT NULL,
-	LoaiTK char(10) FOREIGN KEY REFERENCES LoaiTaiKhoan(MaLoai),
+	TenTK varchar(32) PRIMARY KEY,
+	MatKhau varchar(32) NOT NULL,
+	LoaiTK varchar(10) FOREIGN KEY REFERENCES LoaiTaiKhoan(MaLoai),
 	STT int DEFAULT 1
 )
 INSERT INTO TaiKhoan(TenTK, MatKhau, LoaiTK) VALUES('root', 'root', '.')
@@ -61,7 +61,7 @@ INSERT INTO TaiKhoan(TenTK, MatKhau, LoaiTK) VALUES('ketoan2', 'ketoan2', 'KT')
 
 CREATE TABLE ChucVu
 (
-  MaCV char(10) PRIMARY KEY,
+  MaCV varchar(10) PRIMARY KEY,
   TenCV nvarchar(30) NOT NULL,
   LuongCB float NOT NULL,
   STT int DEFAULT 1
@@ -76,15 +76,15 @@ INSERT INTO ChucVu(MaCV, TenCV, LuongCB) VALUES('KT', N'Kế toán', 3000000)
 
 CREATE TABLE NhanVien
 (
-  MaNV char(10) PRIMARY KEY,
-  TenTK char(32) FOREIGN KEY REFERENCES TaiKhoan(TenTK),
+  MaNV varchar(10) PRIMARY KEY,
+  TenTK varchar(32) FOREIGN KEY REFERENCES TaiKhoan(TenTK),
   HoTen nvarchar(50) NOT NULL,
   GioiTinh int NOT NULL,
   NgaySinh date NOT NULL,
-  Email char(50) NOT NULL,
-  Sdt char(11) NOT NULL,
+  Email varchar(50) NOT NULL,
+  Sdt varchar(11) NOT NULL,
   DiaChi nvarchar(max),
-  ChucVu char(10) FOREIGN KEY REFERENCES ChucVu(MaCV),
+  ChucVu varchar(10) FOREIGN KEY REFERENCES ChucVu(MaCV),
   NgayVaoLam date NOT NULL,
   Luong float,
   HeSoLuong float NOT NULL,
@@ -98,11 +98,13 @@ INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi,
 INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV05', 'giaovien2', N'Giáo viên 2', 0, '07/02/1998', 'giaovien2@gmail.com', '0123456789', N'Bến Tre', 'GV', '08/10/2016', 15000000, 1.7)
 INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV06', 'giaovu1', N'Giáo vụ 1', 1, '04/02/1998', 'giaovu1@gmail.com', '0123456789', N'Tây Ninh', 'GVV', '08/10/2016', 10000000, 1.5)
 INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV07', 'giaovu2', N'Giáo vụ 2', 1, '04/02/1998', 'giaovu2@gmail.com', '0123456789', N'Tây Nguyên', 'GVV', '08/10/2016', 10000000, 1.5)
+INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV08', 'ketoan1', N'Kế toán 1', 1, '04/02/1998', 'ketoan1@gmail.com', '0123456789', N'Tây Ninh', 'KT', '08/10/2016', 10000000, 1.5)
+INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV09', 'ketoan2', N'Kế toán 2', 1, '04/02/1998', 'ketoan2@gmail.com', '0123456789', N'Tây Nguyên', 'KT', '08/10/2016', 10000000, 1.5)
 
 
 CREATE TABLE CaHoc
 (
-	MaCa char(10) PRIMARY KEY,
+	MaCa varchar(10) PRIMARY KEY,
 	MoTa nvarchar(50) NOT NULL,
 	STT int DEFAULT 1
 )
@@ -114,13 +116,13 @@ INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA04', N'Sáng từ 19:30-21:00')
 
 CREATE TABLE KhoaHoc
 (
-	MaKH char(10) PRIMARY KEY,
+	MaKH varchar(10) PRIMARY KEY,
 	TenKH nvarchar(50) NOT NULL,
 	MoTa nvarchar(50) NOT NULL,
 	HocPhi float NOT NULL,
 	STT int DEFAULT 1
 )
-
+INSERT INTO KhoaHoc(MaKH, TenKH, MoTa, HocPhi) VALUES('0', 'none', N'none', 0)
 INSERT INTO KhoaHoc(MaKH, TenKH, MoTa, HocPhi) VALUES('KH01', 'IELTS', N'Khóa học IELTS', 3600000)
 INSERT INTO KhoaHoc(MaKH, TenKH, MoTa, HocPhi) VALUES('KH02', 'TOEIC', N'Khóa học TOEIC', 3200000)
 INSERT INTO KhoaHoc(MaKH, TenKH, MoTa, HocPhi) VALUES('KH03', 'TOEFL', N'Khóa học TOEFL', 3200000)
@@ -130,7 +132,7 @@ INSERT INTO KhoaHoc(MaKH, TenKH, MoTa, HocPhi) VALUES('KH06', N'Tiếng Trung gi
 
 CREATE TABLE Phong
 (
-	MaPhong char(10) PRIMARY KEY,	
+	MaPhong varchar(10) PRIMARY KEY,	
 	MoTa nvarchar(50) NOT NULL,
 	STT int DEFAULT 1
 )
@@ -148,9 +150,9 @@ INSERT INTO Phong(MaPhong, MoTa) VALUES('F3.3', N'Phòng học F3.3')
 
 CREATE TABLE ChiTietKhoaHoc
 (
-	MaKH char(10) FOREIGN KEY REFERENCES KhoaHoc(MaKH),
-	MaPhong char(10) FOREIGN KEY REFERENCES Phong(MaPhong),
-	MaCa char(10) FOREIGN KEY REFERENCES CaHoc(MaCa),
+	MaKH varchar(10) FOREIGN KEY REFERENCES KhoaHoc(MaKH),
+	MaPhong varchar(10) FOREIGN KEY REFERENCES Phong(MaPhong),
+	MaCa varchar(10) FOREIGN KEY REFERENCES CaHoc(MaCa),
 	NgayBatDau date NOT NULL,
 	STT int DEFAULT 1,
 	PRIMARY KEY(MaKH, MaPhong, MaCa)
@@ -171,10 +173,10 @@ INSERT INTO ChiTietKhoaHoc(MaKH, MaPhong, MaCa, NgayBatDau) VALUES('KH04', 'F2.2
 
 CREATE TABLE BienLai
 (
-	MaBienLai char(10) PRIMARY KEY,
-	MaHV char(10) FOREIGN KEY REFERENCES HocVien(MaHV),
+	MaBienLai varchar(10) PRIMARY KEY,
+	MaHV varchar(10) FOREIGN KEY REFERENCES HocVien(MaHV),
 	TongThanhToan bigint NOT NULL,
-	NguoiLap char(10) FOREIGN KEY REFERENCES NhanVien(MaNV),
+	NguoiLap varchar(10) FOREIGN KEY REFERENCES NhanVien(MaNV),
 	NgayLap Date NOT NULL
 )
 
@@ -187,8 +189,8 @@ INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('B
 
 CREATE TABLE ChiTietBienLai
 (
-	MaBienLai char(10) FOREIGN KEY REFERENCES BienLai(MaBienLai),
-	KhoaHoc char(10) FOREIGN KEY REFERENCES KhoaHoc(MaKH),
+	MaBienLai varchar(10) FOREIGN KEY REFERENCES BienLai(MaBienLai),
+	KhoaHoc varchar(10) FOREIGN KEY REFERENCES KhoaHoc(MaKH),
 	HocPhi bigint NOT NULL,
 	PRIMARY KEY(MaBienLai, KhoaHoc)
 )
@@ -204,13 +206,13 @@ INSERT INTO ChiTietBienLai(MaBienLai, KhoaHoc, HocPhi) VALUES('BL06', 'KH05', 23
 
 CREATE TABLE ThoiKhoaBieu
 (
-	MaTKB char(10) PRIMARY KEY,
-	MaCa char(10) FOREIGN KEY REFERENCES CaHoc(MaCa),
-	MaKH char(10) FOREIGN KEY REFERENCES KhoaHoc(MaKH),
-	MaGV char(10) FOREIGN KEY REFERENCES NhanVien(MaNV),
+	MaTKB varchar(10) PRIMARY KEY,
+	MaCa varchar(10) FOREIGN KEY REFERENCES CaHoc(MaCa),
+	MaKH varchar(10) FOREIGN KEY REFERENCES KhoaHoc(MaKH),
+	MaGV varchar(10) FOREIGN KEY REFERENCES NhanVien(MaNV),
 	NgayBatDau date NOT NULL,
 	NgayKiemTra date NOT NULL,
-	KyNang char(10) NOT NULL,
+	KyNang varchar(10) NOT NULL,
 	STT int DEFAULT 1
 )
 
@@ -221,9 +223,9 @@ INSERT INTO ThoiKhoaBieu(MaTKB, MaCa, MaKH, MaGV, NgayBatDau, NgayKiemTra, KyNan
 
 CREATE TABLE Lop
 (
-	MaLop char(10) PRIMARY KEY,
-	MaTKB char(10) FOREIGN KEY REFERENCES ThoiKhoaBieu(MaTKB),
-	PhongHoc char(10) FOREIGN KEY REFERENCES Phong(MaPhong),
+	MaLop varchar(10) PRIMARY KEY,
+	MaTKB varchar(10) FOREIGN KEY REFERENCES ThoiKhoaBieu(MaTKB),
+	PhongHoc varchar(10) FOREIGN KEY REFERENCES Phong(MaPhong),
 	STT int DEFAULT 1
 )
 
@@ -232,8 +234,8 @@ INSERT INTO Lop(MaLop, MaTKB, PhongHoc) VALUES('LOP02', 'TKB02', 'F2.2')
 
 CREATE TABLE ChiTietLop
 (
-	MaLop char(10) FOREIGN KEY REFERENCES Lop(MaLop),
-	MaHV char(10) FOREIGN KEY REFERENCES HocVien(MaHV),
+	MaLop varchar(10) FOREIGN KEY REFERENCES Lop(MaLop),
+	MaHV varchar(10) FOREIGN KEY REFERENCES HocVien(MaHV),
 	STT int DEFAULT 1,
 	PRIMARY KEY (MaLop, MaHV)
 )
@@ -250,8 +252,8 @@ INSERT INTO ChiTietLop(MaLop, MaHV) VALUES('LOP02', 'HV05')
 
 CREATE TABLE DiemDanh
 (
-	MaLop char(10) FOREIGN KEY REFERENCES Lop(MaLop),
-	MaHV char(10) FOREIGN KEY REFERENCES HocVien(MaHV),
+	MaLop varchar(10) FOREIGN KEY REFERENCES Lop(MaLop),
+	MaHV varchar(10) FOREIGN KEY REFERENCES HocVien(MaHV),
 	SoNgayVang int DEFAULT 0,
 	STT int DEFAULT 1,
 	PRIMARY KEY (MaLop, MaHV)
@@ -269,8 +271,8 @@ INSERT INTO DiemDanh(MaLop, MaHV, SoNgayVang) VALUES('LOP02', 'HV05', 0)
 
 CREATE TABLE KetQua
 (
-	MaLop char(10) FOREIGN KEY REFERENCES Lop(MaLop),
-	MaHV char(10) FOREIGN KEY REFERENCES HocVien(MaHV),
+	MaLop varchar(10) FOREIGN KEY REFERENCES Lop(MaLop),
+	MaHV varchar(10) FOREIGN KEY REFERENCES HocVien(MaHV),
 	Nghe float DEFAULT 0,
 	Noi float DEFAULT 0,
 	Doc float DEFAULT 0,
