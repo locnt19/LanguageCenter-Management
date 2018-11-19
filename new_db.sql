@@ -173,7 +173,7 @@ CREATE TABLE BienLai
 (
 	MaBienLai char(10) PRIMARY KEY,
 	MaHV char(10) FOREIGN KEY REFERENCES HocVien(MaHV),
-	TongThanhToan float NOT NULL,
+	TongThanhToan bigint NOT NULL,
 	NguoiLap char(10) FOREIGN KEY REFERENCES NhanVien(MaNV),
 	NgayLap Date NOT NULL
 )
@@ -189,7 +189,7 @@ CREATE TABLE ChiTietBienLai
 (
 	MaBienLai char(10) FOREIGN KEY REFERENCES BienLai(MaBienLai),
 	KhoaHoc char(10) FOREIGN KEY REFERENCES KhoaHoc(MaKH),
-	HocPhi float NOT NULL,
+	HocPhi bigint NOT NULL,
 	PRIMARY KEY(MaBienLai, KhoaHoc)
 )
 INSERT INTO ChiTietBienLai(MaBienLai, KhoaHoc, HocPhi) VALUES('BL01', 'KH01', 3600000)

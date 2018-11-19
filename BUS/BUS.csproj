@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BienLaiBUS.cs" />
     <Compile Include="HocVienBUS.cs" />
     <Compile Include="KetQuaBUS.cs" />
     <Compile Include="LopHocBUS.cs" />
