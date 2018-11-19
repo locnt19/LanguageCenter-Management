@@ -45,14 +45,14 @@
             this.btn_Tim = new System.Windows.Forms.Button();
             this.txt_Tim = new System.Windows.Forms.TextBox();
             this.grb = new System.Windows.Forms.GroupBox();
+            this.dtp_Ngaylap = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.ucNhanVienKT = new UC.ucNhanVien();
             this.ucKhoaHoc2 = new UC.ucKhoaHoc();
             this.ucKhoaHoc1 = new UC.ucKhoaHoc();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_MaHv = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dtp_Ngaylap = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Huy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bienlai)).BeginInit();
@@ -68,6 +68,7 @@
             this.btn_Luu.TabIndex = 37;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = true;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // txt_TongTien
             // 
@@ -117,6 +118,7 @@
             this.btn_Them.TabIndex = 24;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // dgv_bienlai
             // 
@@ -134,6 +136,7 @@
             this.dgv_bienlai.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_bienlai.Size = new System.Drawing.Size(694, 262);
             this.dgv_bienlai.TabIndex = 27;
+            this.dgv_bienlai.SelectionChanged += new System.EventHandler(this.dgv_bienlai_SelectionChanged);
             // 
             // colTentk
             // 
@@ -207,14 +210,14 @@
             // 
             // grb
             // 
+            this.grb.Controls.Add(this.dtp_Ngaylap);
+            this.grb.Controls.Add(this.label6);
             this.grb.Controls.Add(this.ucNhanVienKT);
             this.grb.Controls.Add(this.ucKhoaHoc2);
             this.grb.Controls.Add(this.ucKhoaHoc1);
             this.grb.Controls.Add(this.label8);
             this.grb.Controls.Add(this.txt_MaHv);
             this.grb.Controls.Add(this.label7);
-            this.grb.Controls.Add(this.dtp_Ngaylap);
-            this.grb.Controls.Add(this.label4);
             this.grb.Controls.Add(this.label2);
             this.grb.Controls.Add(this.btn_Luu);
             this.grb.Controls.Add(this.btn_Huy);
@@ -228,12 +231,29 @@
             this.grb.Controls.Add(this.btn_Inreport);
             this.grb.Controls.Add(this.btn_Tim);
             this.grb.Controls.Add(this.txt_Tim);
-            this.grb.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.grb.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb.Location = new System.Drawing.Point(12, 12);
             this.grb.Name = "grb";
-            this.grb.Size = new System.Drawing.Size(725, 683);
+            this.grb.Size = new System.Drawing.Size(764, 683);
             this.grb.TabIndex = 37;
             this.grb.TabStop = false;
+            // 
+            // dtp_Ngaylap
+            // 
+            this.dtp_Ngaylap.Location = new System.Drawing.Point(508, 116);
+            this.dtp_Ngaylap.Name = "dtp_Ngaylap";
+            this.dtp_Ngaylap.Size = new System.Drawing.Size(200, 33);
+            this.dtp_Ngaylap.TabIndex = 55;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 15.75F);
+            this.label6.Location = new System.Drawing.Point(382, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 25);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "Ngày lập";
             // 
             // ucNhanVienKT
             // 
@@ -293,24 +313,6 @@
             this.label7.TabIndex = 44;
             this.label7.Text = "Khóa học:";
             // 
-            // dtp_Ngaylap
-            // 
-            this.dtp_Ngaylap.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.dtp_Ngaylap.Location = new System.Drawing.Point(508, 120);
-            this.dtp_Ngaylap.Name = "dtp_Ngaylap";
-            this.dtp_Ngaylap.Size = new System.Drawing.Size(200, 33);
-            this.dtp_Ngaylap.TabIndex = 41;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.label4.Location = new System.Drawing.Point(401, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 25);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Ngày lập:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -330,14 +332,16 @@
             this.btn_Huy.TabIndex = 36;
             this.btn_Huy.Text = "Hủy";
             this.btn_Huy.UseVisualStyleBackColor = true;
+            this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
             // 
             // FormBienLai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 706);
+            this.ClientSize = new System.Drawing.Size(788, 706);
             this.Controls.Add(this.grb);
             this.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormBienLai";
             this.Text = "FormBienLai";
@@ -364,8 +368,6 @@
         private System.Windows.Forms.TextBox txt_Tim;
         private System.Windows.Forms.GroupBox grb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtp_Ngaylap;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_Huy;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -378,6 +380,8 @@
         private UC.ucKhoaHoc ucKhoaHoc2;
         private UC.ucKhoaHoc ucKhoaHoc1;
         private UC.ucNhanVien ucNhanVienKT;
+        private System.Windows.Forms.DateTimePicker dtp_Ngaylap;
+        private System.Windows.Forms.Label label6;
 
     }
 }

@@ -80,6 +80,7 @@
             this.mni_KeToan.Name = "mni_KeToan";
             this.mni_KeToan.Size = new System.Drawing.Size(116, 29);
             this.mni_KeToan.Text = "Kế toán";
+            this.mni_KeToan.Click += new System.EventHandler(this.mni_KeToan_Click);
             // 
             // mni_KhoaHoc
             // 

@@ -19,9 +19,9 @@ namespace BUS
         {
             return _bl.load_BienLaiDAO();
         }
-        public int insert_BienLaiBUS(string MaBienLai, string MaHV, double TongThanhToan, string NguoiLap, DateTime Ngaylap)
+        public int insert_BienLaiBUS(string MaBienLai, string MaHV, double TongThanhToan, string NguoiLap, DateTime NgayLap)
         {
-            return _bl.insert_BienLaiDAO(MaBienLai, MaHV, TongThanhToan, NguoiLap, Ngaylap);
+            return _bl.insert_BienLaiDAO(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap);
         }
     }
 }

@@ -18,3 +18,7 @@ C:\Users\dunca_000\Desktop\19112018\DTO\bin\Debug\DTO.dll
 C:\Users\dunca_000\Desktop\19112018\DTO\bin\Debug\DTO.pdb
 C:\Users\dunca_000\Desktop\19112018\DTO\obj\Debug\DTO.dll
 C:\Users\dunca_000\Desktop\19112018\DTO\obj\Debug\DTO.pdb
+D:\langue\DTO\bin\Debug\DTO.dll
+D:\langue\DTO\bin\Debug\DTO.pdb
+D:\langue\DTO\obj\Debug\DTO.dll
+D:\langue\DTO\obj\Debug\DTO.pdb

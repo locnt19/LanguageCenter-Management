@@ -43,7 +43,7 @@ namespace DAO
                 item.MaHV = sdr["MaHV"].ToString();
                 item.TongThanhToan = int.Parse(sdr["TongThanhToan"].ToString());
                 item.NguoiLap = sdr["NguoiLap"].ToString();
-                item.NgayLap = (DateTime)sdr["NgayLap"];
+                item.NgayLap = DateTime.Parse(sdr["NgayLap"].ToString());
                 lst_Bienlai.Add(item);
             }
             sdr.Close();
@@ -51,19 +51,21 @@ namespace DAO
             return lst_Bienlai;
         }
 
-        public int insert_BienLaiDAO(string MaBienLai, string MaHV, double TongThanhToan, string NguoiLap, DateTime Ngaylap)
+        public int insert_BienLaiDAO(string MaBienLai, string MaHV, double TongThanhToan, string NguoiLap, DateTime NgayLap)
         {
-            string insert = "insert into BienLai values (@MaBienLai,@MaHV,@TongThanhToan,@NguoiLap,@Ngaylap)";
-            SqlParameter[] para = new SqlParameter[5];
-            para[0] = new SqlParameter("@MaBienLai", MaBienLai);
-            para[1] = new SqlParameter("@MaHV", MaHV);
-            para[2] = new SqlParameter("@TongThanhToan", TongThanhToan);
-            para[3] = new SqlParameter("@NguoiLap", NguoiLap);
-            para[4] = new SqlParameter("@Ngaylap", Ngaylap);
             SqlConnection conn = DataProvider.TaoKetNoi();
-            int ketqua = DataProvider.executeinsert(insert, para, conn);
+            string query = "Insert Into BienLai (MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) Values (@MaBienLai, @MaHV, @TongThanhToan, @NguoiLap, @NgayLap)";
+            SqlParameter[] pars = new SqlParameter[5];
+            pars[0] = new SqlParameter("@MaBienLai", MaBienLai);
+            pars[1] = new SqlParameter("@MaHV", MaHV);
+            pars[2] = new SqlParameter("@TongThanhToan", TongThanhToan);
+            pars[3] = new SqlParameter("@NguoiLap", NguoiLap);
+            pars[4] = new SqlParameter("@NgayLap", NgayLap.ToString("MM/dd/yyyy"));
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddRange(pars);
+            int kq = cmd.ExecuteNonQuery();
             conn.Close();
-            return ketqua;
+            return kq;
         }
     }
 }
