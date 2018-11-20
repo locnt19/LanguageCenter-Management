@@ -67,5 +67,20 @@ namespace DAO
             conn.Close();
             return kq;
         }
+
+        public int insert_ChiTietBienLaiDAO(string MaBienLai, string KhoaHoc, double HocPhi)
+        {
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string query = "INSERT INTO ChiTietBienLai(MaBienLai, KhoaHoc, HocPhi) VALUES(@MaBienLai, @KhoaHoc, @HocPhi)";
+            SqlParameter[] pars = new SqlParameter[3];
+            pars[0] = new SqlParameter("@MaBienLai", MaBienLai);
+            pars[1] = new SqlParameter("@KhoaHoc", KhoaHoc);
+            pars[2] = new SqlParameter("@HocPhi", HocPhi);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddRange(pars);
+            int kq = cmd.ExecuteNonQuery();
+            conn.Close();
+            return kq;
+        }
     }
 }

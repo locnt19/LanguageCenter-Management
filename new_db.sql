@@ -10,8 +10,8 @@ CREATE TABLE HocVien
   HoTen nvarchar(50) NOT NULL,
   GioiTinh int NOT NULL,
   NgaySinh date NOT NULL,
-  Email char(50) NOT NULL,
-  Sdt char(11) NOT NULL,
+  Email varchar(50) NOT NULL,
+  Sdt varchar(11) NOT NULL,
   DiaChi nvarchar(max),
   STT int DEFAULT 1
 )
@@ -58,7 +58,8 @@ INSERT INTO TaiKhoan(TenTK, MatKhau, LoaiTK) VALUES('giaovu1', 'giaovu1', 'GVV')
 INSERT INTO TaiKhoan(TenTK, MatKhau, LoaiTK) VALUES('giaovu2', 'giaovu2', 'GVV')
 INSERT INTO TaiKhoan(TenTK, MatKhau, LoaiTK) VALUES('ketoan1', 'ketoan1', 'KT')
 INSERT INTO TaiKhoan(TenTK, MatKhau, LoaiTK) VALUES('ketoan2', 'ketoan2', 'KT')
-
+INSERT INTO TaiKhoan(TenTK, MatKhau, LoaiTK) VALUES('ketoan3', 'ketoan3', 'KT')
+INSERT INTO TaiKhoan(TenTK, MatKhau, LoaiTK) VALUES('ketoan4', 'ketoan4', 'KT')
 CREATE TABLE ChucVu
 (
   MaCV varchar(10) PRIMARY KEY,
@@ -99,8 +100,9 @@ INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi,
 INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV06', 'giaovu1', N'Giáo vụ 1', 1, '04/02/1998', 'giaovu1@gmail.com', '0123456789', N'Tây Ninh', 'GVV', '08/10/2016', 10000000, 1.5)
 INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV07', 'giaovu2', N'Giáo vụ 2', 1, '04/02/1998', 'giaovu2@gmail.com', '0123456789', N'Tây Nguyên', 'GVV', '08/10/2016', 10000000, 1.5)
 INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV08', 'ketoan1', N'Kế toán 1', 1, '04/02/1998', 'ketoan1@gmail.com', '0123456789', N'Tây Ninh', 'KT', '08/10/2016', 10000000, 1.5)
-INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV09', 'ketoan2', N'Kế toán 2', 1, '04/02/1998', 'ketoan2@gmail.com', '0123456789', N'Tây Nguyên', 'KT', '08/10/2016', 10000000, 1.5)
-
+INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV09', 'ketoan2', N'Kế toán 2', 1, '01/02/1998', 'ketoan2@gmail.com', '0123456789', N'Tây Nguyên', 'KT', '11/18/2016', 10000000, 1.5)
+INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV10', 'ketoan3', N'Kế toán 3', 1, '05/09/1998', 'ketoan3@gmail.com', '0123456789', N'Đà Nẵng', 'KT', '11/18/2017', 10000000, 1.5)
+INSERT INTO NhanVien(MaNV, TenTK, HoTen, GioiTinh, NgaySinh, Email, Sdt, DiaChi, ChucVu, NgayVaoLam, Luong, HeSoLuong) VALUES('NV11', 'ketoan4', N'Kế toán 4', 1, '12/12/1998', 'ketoan4@gmail.com', '0123456789', N'Đà Lạt', 'KT', '09/19/2018', 10000000, 1.5)
 
 CREATE TABLE CaHoc
 (
@@ -180,12 +182,12 @@ CREATE TABLE BienLai
 	NgayLap Date NOT NULL
 )
 
-INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL01', 'HV01', 6800000, 'NV06', '10/31/2018')
-INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL02', 'HV02', 6400000, 'NV06', '10/31/2018')
-INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL03', 'HV03', 3600000, 'NV06', '10/31/2018')
-INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL04', 'HV04', 2350000, 'NV07', '10/31/2018')
-INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL05', 'HV05', 5950000, 'NV07', '10/31/2018')
-INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL06', 'HV06', 2350000, 'NV07', '10/31/2018')
+INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL01', 'HV01', 6800000, 'NV09', '10/20/2018')
+INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL02', 'HV02', 6400000, 'NV08', '10/18/2018')
+INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL03', 'HV03', 3600000, 'NV10', '10/31/2018')
+INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL04', 'HV04', 2350000, 'NV09', '12/11/2018')
+INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL05', 'HV05', 5950000, 'NV08', '11/01/2018')
+INSERT INTO BienLai(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap) VALUES('BL06', 'HV06', 2350000, 'NV11', '10/02/2018')
 
 CREATE TABLE ChiTietBienLai
 (

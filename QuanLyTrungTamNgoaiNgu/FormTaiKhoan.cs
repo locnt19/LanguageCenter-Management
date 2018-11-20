@@ -26,6 +26,7 @@ namespace QuanLyTrungTamNgoaiNgu
             InitializeComponent();
             dgv_taikhoan.AutoGenerateColumns = false;
             FormBorderStyle = FormBorderStyle.None;
+            grb.Anchor = AnchorStyles.None;
             dgv_taikhoan.Anchor = AnchorStyles.None;
             dgv_taikhoan.AllowUserToAddRows = false;
             dgv_taikhoan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

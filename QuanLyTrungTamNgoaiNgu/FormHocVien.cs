@@ -58,7 +58,6 @@ namespace QuanLyTrungTamNgoaiNgu
         }
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            List<HocVienDTO> lst_HocVien = new List<HocVienDTO>();
             lst_HocVien = _hv.tim_HocVienDAO(txt_Tim.Text);
             dgv_HocVien.DataSource = null;
             dgv_HocVien.DataSource = lst_HocVien;

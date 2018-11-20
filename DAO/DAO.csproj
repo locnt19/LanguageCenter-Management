@@ -43,6 +43,7 @@
     <Compile Include="DataProvider.cs" />
     <Compile Include="HocVienDAO.cs" />
     <Compile Include="KetQuaDAO.cs" />
+    <Compile Include="KhoaHocDAO.cs" />
     <Compile Include="LopHocDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
     <Compile Include="PhongDAO.cs" />

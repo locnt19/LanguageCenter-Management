@@ -23,5 +23,9 @@ namespace BUS
         {
             return _bl.insert_BienLaiDAO(MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap);
         }
+        public int insert_ChiTietBienLaiBUS(string MaBienLai, string KhoaHoc, double HocPhi)
+        {
+            return _bl.insert_ChiTietBienLaiDAO(MaBienLai, KhoaHoc, HocPhi);
+        } 
     }
 }

@@ -42,6 +42,7 @@
     <Compile Include="BienLaiBUS.cs" />
     <Compile Include="HocVienBUS.cs" />
     <Compile Include="KetQuaBUS.cs" />
+    <Compile Include="KhoaHocBUS.cs" />
     <Compile Include="LopHocBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="PhongBUS.cs" />
