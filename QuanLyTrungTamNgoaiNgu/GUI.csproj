@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForKhoaHoc.Designer.cs">
+      <DependentUpon>ForKhoaHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBienLai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ForKhoaHoc.resx">
+      <DependentUpon>ForKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBienLai.resx">
       <DependentUpon>FormBienLai.cs</DependentUpon>
     </EmbeddedResource>

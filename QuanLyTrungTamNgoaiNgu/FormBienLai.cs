@@ -197,8 +197,8 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void loadKhoaHoc()
         {
-            List<KhoaHocDTO> lst_KhoaHoc1 = _KhoaHocBUS.loadKhoaHocDAO();
-            List<KhoaHocDTO> lst_KhoaHoc2 = _KhoaHocBUS.loadKhoaHocDAO();
+            List<KhoaHocDTO> lst_KhoaHoc1 = _KhoaHocBUS.loadKhoaHocBUS();
+            List<KhoaHocDTO> lst_KhoaHoc2 = _KhoaHocBUS.loadKhoaHocBUS();
             cbb_KhoaHoc1.DataSource = lst_KhoaHoc1;
             cbb_KhoaHoc1.ValueMember = "MaKH";
             cbb_KhoaHoc1.DisplayMember = "TenKH";

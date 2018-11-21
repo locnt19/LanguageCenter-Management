@@ -11,13 +11,29 @@ namespace BUS
     public class KhoaHocBUS
     {
         KhoaHocDAO _kh = new KhoaHocDAO();
-        public List<KhoaHocDTO> loadKhoaHocDAO()
+        public List<KhoaHocDTO> loadKhoaHocBUS()
         {
             return _kh.loadKhoaHocDAO();
+        }
+        public List<KhoaHocDTO> timkhoahoc(string MaKH)
+        {
+            return _kh.TimKhoaHocDAO(MaKH);
         }
         public int get_HocPhi(string MaKH)
         {
             return _kh.get_HocPhi(MaKH);
+        }
+        public int insert_khoahocBUS(string MaKH, string TenKH, string MoTa, double Hocphi)
+        {
+            return _kh.insert_KhoaHocDAO(MaKH, TenKH, MoTa, Hocphi);
+        }
+        public int update_khoahocBUS(string MaKH, string TenKH, string MoTa, double Hocphi)
+        {
+            return _kh.update_khoahocDAO( MaKH, TenKH, MoTa, Hocphi);
+        }
+        public int delete_khoahocBUS(KhoaHocDTO khdto)
+        {
+            return _kh.delete_khoahocDAO(khdto);
         }
     }
 }

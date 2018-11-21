@@ -87,6 +87,7 @@
             this.mni_KhoaHoc.Name = "mni_KhoaHoc";
             this.mni_KhoaHoc.Size = new System.Drawing.Size(116, 29);
             this.mni_KhoaHoc.Text = "Khóa học";
+            this.mni_KhoaHoc.Click += new System.EventHandler(this.mni_KhoaHoc_Click);
             // 
             // mni_PhongHoc
             // 

@@ -131,5 +131,10 @@ namespace QuanLyTrungTamNgoaiNgu
             frm_BienLai.Dock = DockStyle.Fill;
             frm_BienLai.Show();
         }
+
+        private void mni_KhoaHoc_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
