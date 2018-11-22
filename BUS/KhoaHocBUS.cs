@@ -13,7 +13,7 @@ namespace BUS
         KhoaHocDAO _kh = new KhoaHocDAO();
         public List<KhoaHocDTO> loadKhoaHocBUS()
         {
-            return _kh.loadKhoaHocDAO();
+            return _kh.load_ChiTietKhoaHocDAO();
         }
         public List<KhoaHocDTO> load_KhoaHocBUS()
         {

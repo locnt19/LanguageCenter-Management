@@ -43,7 +43,7 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void ForKhoaHoc_Load(object sender, EventArgs e)
         {
-            load_KhoaHoc();
+            //load_KhoaHoc();
         }
 
         private void load_KhoaHoc()
