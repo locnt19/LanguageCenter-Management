@@ -19,7 +19,7 @@ namespace QuanLyTrungTamNgoaiNgu
         BienLaiBUS _bienlaiBUS = new BienLaiBUS();
         List<BienLaiDTO> lsbienlai = new List<BienLaiDTO>();
         BienLaiDTO bienlaidto = new BienLaiDTO();
-        int _chucnang = 0; //1- Them, 2-Sua
+        int _chucnang = 0; //1- Them
         int _TongTien = 0;
         FormTimHocVien frmTimHV = null;
         KhoaHocBUS _KhoaHocBUS = new KhoaHocBUS();
@@ -48,11 +48,12 @@ namespace QuanLyTrungTamNgoaiNgu
             txt_TongTien.Enabled = false;
             txt_HoTen.Enabled = false;
             btn_ChonHV.Enabled = false;
+            btn_OK.Enabled = false;
             btn_Check.Enabled = false;
         }
         private void FormBienLai_Load(object sender, EventArgs e)
         {
-            TimBienlaitheoma();
+            timBienLai();
             loadBienlai();
             loadKhoaHoc();
         }
@@ -63,9 +64,9 @@ namespace QuanLyTrungTamNgoaiNgu
             dgv_bienlai.DataSource = lsbienlai;
         }
 
-        private void TimBienlaitheoma()
+        private void timBienLai()
         {
-            lsbienlai = _bienlaiBUS.get_BienlaiBUS(txt_Tim.Text);
+            lsbienlai = _bienlaiBUS.tim_BienlaiBUS(txt_Tim.Text);
             dgv_bienlai.DataSource = null;
             dgv_bienlai.DataSource = lsbienlai;
         }
@@ -75,9 +76,11 @@ namespace QuanLyTrungTamNgoaiNgu
             {
                 txt_MaBL.Text = blchon.MaBienLai;
                 txt_MaHV.Text = blchon.MaHV;
+                txt_HoTen.Text = blchon.HoTenHV;
                 txt_TongTien.Text = blchon.TongThanhToan.ToString();
                 ucNhanVienKT.NhanVien = blchon.NguoiLap;
                 dtp_Ngaylap.Text = blchon.NgayLap.ToString();
+                cbb_KhoaHoc1.SelectedValue = blchon.MaKH;
             }
             else
             {
@@ -101,7 +104,7 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            TimBienlaitheoma();
+            timBienLai();
         }
 
         private void dgv_bienlai_SelectionChanged(object sender, EventArgs e)
@@ -135,28 +138,36 @@ namespace QuanLyTrungTamNgoaiNgu
                         r2 = 0;
                         r3 = 0;
                         r1 = _bienlaiBUS.insert_BienLaiBUS(txt_MaBL.Text, txt_MaHV.Text, double.Parse(txt_TongTien.Text), ucNhanVienKT.NhanVien, dtp_Ngaylap.Value);
-                        if (cbb_KhoaHoc1.SelectedValue.ToString() != "0")
+                        if (cbb_KhoaHoc1.SelectedValue.ToString() == cbb_KhoaHoc2.SelectedValue.ToString())
                         {
-                            r2 = _bienlaiBUS.insert_ChiTietBienLaiBUS(txt_MaBL.Text, cbb_KhoaHoc1.SelectedValue.ToString(), _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc1.SelectedValue.ToString()));
+                            MessageBox.Show("Vui lòng chọn 2 khóa học khác nhau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         }
-                        if (cbb_KhoaHoc2.SelectedValue.ToString() != "0")
+                        else
                         {
-                            r3 = _bienlaiBUS.insert_ChiTietBienLaiBUS(txt_MaBL.Text, cbb_KhoaHoc2.SelectedValue.ToString(), _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc2.SelectedValue.ToString()));
+                            if (cbb_KhoaHoc1.SelectedValue.ToString() != "0")
+                            {
+                                r2 = _bienlaiBUS.insert_ChiTietBienLaiBUS(txt_MaBL.Text, cbb_KhoaHoc1.SelectedValue.ToString(), _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc1.SelectedValue.ToString()));
+                            }
+                            if (cbb_KhoaHoc2.SelectedValue.ToString() != "0")
+                            {
+                                r3 = _bienlaiBUS.insert_ChiTietBienLaiBUS(txt_MaBL.Text, cbb_KhoaHoc2.SelectedValue.ToString(), _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc2.SelectedValue.ToString()));
+                            }
+                            if ((r1 > 0 && r2 > 0) || (r1 > 0 && r3 > 0))
+                            {
+                                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                loadBienlai();
+                                _TimChonHocVien = null;
+                                txt_MaBL.Enabled = false;
+                                txt_MaHV.Enabled = false;
+                                btn_OK.Enabled = false;
+                                txt_TongTien.Enabled = false;
+                                ucNhanVienKT.Enabled = false;
+                                dtp_Ngaylap.Enabled = false;
+                                cbb_KhoaHoc1.Enabled = false;
+                                cbb_KhoaHoc2.Enabled = false;
+                            }
+                            else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        if ((r1 > 0 && r2 > 0) || (r1 > 0 && r3 > 0))
-                        {
-                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            loadBienlai();
-                            _TimChonHocVien = null;
-                            txt_MaBL.Enabled = false;
-                            txt_MaHV.Enabled = false;
-                            txt_TongTien.Enabled = false;
-                            ucNhanVienKT.Enabled = false;
-                            dtp_Ngaylap.Enabled = false;
-                            cbb_KhoaHoc1.Enabled = false;
-                            cbb_KhoaHoc2.Enabled = false;
-                        }
-                        else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     //_chucnang = 0;
                     break;
@@ -172,6 +183,8 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
+            btn_OK.Enabled = true;
+            btn_Them.Enabled = false;
             ucNhanVienKT.Enabled = true;
             cbb_KhoaHoc1.Enabled = true;
             cbb_KhoaHoc2.Enabled = true;
@@ -187,18 +200,20 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             txt_MaHV.Enabled = false;
             txt_TongTien.Enabled = false;
+            txt_TongTien.Text = string.Empty;
             ucNhanVienKT.Enabled = false;
             dtp_Ngaylap.Enabled = false;
             cbb_KhoaHoc1.Enabled = false;
             cbb_KhoaHoc2.Enabled = false;
             btn_Inreport.Enabled = true;
+            btn_OK.Enabled = false;
             dgv_bienlai.ClearSelection();
         }
 
         private void loadKhoaHoc()
         {
-            List<KhoaHocDTO> lst_KhoaHoc1 = _KhoaHocBUS.loadKhoaHocBUS();
-            List<KhoaHocDTO> lst_KhoaHoc2 = _KhoaHocBUS.loadKhoaHocBUS();
+            List<KhoaHocDTO> lst_KhoaHoc1 = _KhoaHocBUS.load_KhoaHocBUS();
+            List<KhoaHocDTO> lst_KhoaHoc2 = _KhoaHocBUS.load_KhoaHocBUS();
             cbb_KhoaHoc1.DataSource = lst_KhoaHoc1;
             cbb_KhoaHoc1.ValueMember = "MaKH";
             cbb_KhoaHoc1.DisplayMember = "TenKH";
@@ -209,14 +224,10 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void cbb_KhoaHoc1_SelectedValueChanged(object sender, EventArgs e)
         {
-            _TongTien += _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc1.SelectedValue.ToString());
-            txt_TongTien.Text = _TongTien.ToString();
         }
 
         private void cbb_KhoaHoc2_SelectedValueChanged(object sender, EventArgs e)
         {
-            _TongTien += _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc2.SelectedValue.ToString());
-            txt_TongTien.Text = _TongTien.ToString();
         }
 
         private void btn_LamMoi_Click(object sender, EventArgs e)
@@ -230,6 +241,7 @@ namespace QuanLyTrungTamNgoaiNgu
                 string strMaLonNhat = lsbienlai.Max(o => o.MaBienLai);
                 int matieptheo = int.Parse(strMaLonNhat.Replace("BL", "")) + 1;
                 txt_MaBL.Text = "BL" + matieptheo.ToString("00");
+                txt_TongTien.Text = string.Empty;
             }
             dgv_bienlai.ClearSelection();
             txt_HoTen.Text = string.Empty;
@@ -249,6 +261,26 @@ namespace QuanLyTrungTamNgoaiNgu
                 txt_MaHV.Text = _TimChonHocVien.MaHV;
                 txt_HoTen.Text = _TimChonHocVien.HoTen;
             }
+        }
+
+        private void btn_OK_Click(object sender, EventArgs e)
+        {
+            if (cbb_KhoaHoc1.SelectedValue.ToString() != "0" && cbb_KhoaHoc2.SelectedValue.ToString() != "0")
+            {
+                _TongTien = _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc1.SelectedValue.ToString()) + _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc2.SelectedValue.ToString());
+                txt_TongTien.Text = _TongTien.ToString();
+            }
+            else if (cbb_KhoaHoc1.SelectedValue.ToString() != "0" && cbb_KhoaHoc2.SelectedValue.ToString() == "0")
+            {
+                _TongTien = _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc1.SelectedValue.ToString());
+                txt_TongTien.Text = _TongTien.ToString();
+            }
+            else if (cbb_KhoaHoc1.SelectedValue.ToString() == "0" && cbb_KhoaHoc2.SelectedValue.ToString() != "0")
+            {
+                _TongTien = _KhoaHocBUS.get_HocPhi(cbb_KhoaHoc2.SelectedValue.ToString());
+                txt_TongTien.Text = _TongTien.ToString();
+            }
+            else txt_TongTien.Text = string.Empty;
         }
     }
 }

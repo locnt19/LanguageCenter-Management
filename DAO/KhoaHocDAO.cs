@@ -10,11 +10,32 @@ namespace DAO
 {
     public class KhoaHocDAO
     {
-        public List<KhoaHocDTO> loadKhoaHocDAO()
+        public List<KhoaHocDTO> load_KhoaHocDAO()
         {
             List<KhoaHocDTO> lst_KhoaHoc = new List<KhoaHocDTO>();
             SqlConnection conn = DataProvider.TaoKetNoi();
-            string query = "Select * From KhoaHoc kh,ChiTietKhoaHoc ct Where kh.STT=1 and kh.MaKH=ct.MaKH";
+            string query = "Select * From KhoaHoc Where STT=1";
+            SqlDataReader sdr = DataProvider.ThucHienTruyVan(query, conn);
+            while (sdr.Read())
+            {
+                KhoaHocDTO item = new KhoaHocDTO();
+                item.MaKH = sdr["MaKH"].ToString();
+                item.TenKH = sdr["TenKH"].ToString();
+                item.MoTa = sdr["MoTa"].ToString();
+                item.HocPhi = double.Parse(sdr["HocPhi"].ToString());
+                item.STT = int.Parse(sdr["STT"].ToString());
+                lst_KhoaHoc.Add(item);
+            }
+            sdr.Close();
+            conn.Close();
+            return lst_KhoaHoc;
+        }
+
+        public List<KhoaHocDTO> load_ChiTietKhoaHocDAO()
+        {
+            List<KhoaHocDTO> lst_KhoaHoc = new List<KhoaHocDTO>();
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string query = "Select * From ChiTietKhoaHoc Where STT=1";
             SqlDataReader sdr = DataProvider.ThucHienTruyVan(query, conn);
             while (sdr.Read())
             {
@@ -24,7 +45,7 @@ namespace DAO
                 item.TenKH = sdr["TenKH"].ToString();
                 item.MaCa = sdr["MaCa"].ToString();
                 item.MoTa = sdr["MoTa"].ToString();
-                item.HocPhi = double.Parse(sdr["HocPhi"].ToString());                
+                item.HocPhi = double.Parse(sdr["HocPhi"].ToString());
                 item.Ngaybatdau = DateTime.Parse(sdr["Ngaybatdau"].ToString());
                 item.STT = int.Parse(sdr["STT"].ToString());
                 lst_KhoaHoc.Add(item);

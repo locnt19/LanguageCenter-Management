@@ -193,3 +193,4 @@ D:\langue\QuanLyTrungTamNgoaiNgu\obj\Debug\GUI.csproj.GenerateResource.Cache
 D:\langue\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.exe
 D:\langue\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.pdb
 D:\langue\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.ForKhoaHoc.resources
+C:\Users\dunca_000\Desktop\C#\QuanLyTrungTamNgoaiNgu\obj\Debug\QuanLyTrungTamNgoaiNgu.FormKhoaHoc.resources

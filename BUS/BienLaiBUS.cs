@@ -11,9 +11,9 @@ namespace BUS
     public class BienLaiBUS
     {
         BienLaiDAO _bl = new BienLaiDAO();
-        public List<BienLaiDTO> get_BienlaiBUS(string MaBL)
+        public List<BienLaiDTO> tim_BienlaiBUS(string key)
         {
-            return _bl.get_BienlaiDAO(MaBL);
+            return _bl.tim_BienlaiDAO(key);
         }
         public List<BienLaiDTO> load_BienLaiBUS()
         {

@@ -9,40 +9,47 @@ namespace DAO
 {
     public class BienLaiDAO
     {
-        public List<BienLaiDTO> get_BienlaiDAO(string MaBienLai)
-        {
-            List<BienLaiDTO> lst_TaiKhoan = new List<BienLaiDTO>();
-            SqlConnection conn = DataProvider.TaoKetNoi();
-            string query = "Select * from BienLai where MaBienLai= @MaBienLai";
-            SqlParameter par = new SqlParameter("@MaBienLai", MaBienLai);
-            SqlDataReader sdr = DataProvider.ThucHienTruyVan(query, par, conn);
-            while (sdr.Read())
-            {
-                BienLaiDTO item = new BienLaiDTO();
-                item.MaBienLai = sdr["MaBienLai"].ToString();
-                item.MaHV = sdr["MaHV"].ToString();
-                item.TongThanhToan = int.Parse(sdr["TongThanhToan"].ToString());
-                item.NguoiLap = sdr["NguoiLap"].ToString();
-                item.NgayLap = (DateTime)sdr["NgayLap"];
-                lst_TaiKhoan.Add(item);
-            }
-            sdr.Close();
-            conn.Close();
-            return lst_TaiKhoan;
-        }
-        public List<BienLaiDTO> load_BienLaiDAO()
+        public List<BienLaiDTO> tim_BienlaiDAO(string key)
         {
             List<BienLaiDTO> lst_Bienlai = new List<BienLaiDTO>();
             SqlConnection conn = DataProvider.TaoKetNoi();
-            string query = "Select * from BienLai ";
+            string query = "SELECT BL.MaBienLai, BL.MaHV, HV.HoTen as HoTenHV, CT.KhoaHoc, CT.HocPhi, BL.TongThanhToan, BL.NguoiLap, NV.HoTen as HoTenNV, BL.NgayLap FROM HocVien HV, NhanVien NV, BienLai BL, ChiTietBienLai CT WHERE BL.MaBienLai = CT.MaBienLai AND BL.MaHV = HV.MaHV AND BL.NguoiLap = NV.MaNV AND ( BL.MaBienLai like '%" + key + "%' OR HV.HoTen like '%" + key + "%' OR NV.HoTen like '%" + key + "%')";
             SqlDataReader sdr = DataProvider.ThucHienTruyVan(query, conn);
             while (sdr.Read())
             {
                 BienLaiDTO item = new BienLaiDTO();
                 item.MaBienLai = sdr["MaBienLai"].ToString();
                 item.MaHV = sdr["MaHV"].ToString();
+                item.HoTenHV = sdr["HoTenHV"].ToString();
+                item.MaKH = sdr["KhoaHoc"].ToString();
+                item.HocPhi = int.Parse(sdr["HocPhi"].ToString());
                 item.TongThanhToan = int.Parse(sdr["TongThanhToan"].ToString());
                 item.NguoiLap = sdr["NguoiLap"].ToString();
+                item.HoTenNV = sdr["HoTenNV"].ToString();
+                item.NgayLap = DateTime.Parse(sdr["NgayLap"].ToString());
+                lst_Bienlai.Add(item);
+            }
+            sdr.Close();
+            conn.Close();
+            return lst_Bienlai;
+        }
+        public List<BienLaiDTO> load_BienLaiDAO()
+        {
+            List<BienLaiDTO> lst_Bienlai = new List<BienLaiDTO>();
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string query = "SELECT BL.MaBienLai, BL.MaHV, HV.HoTen as HoTenHV, CT.KhoaHoc, CT.HocPhi, BL.TongThanhToan, BL.NguoiLap, NV.HoTen as HoTenNV, BL.NgayLap FROM HocVien HV, NhanVien NV, BienLai BL, ChiTietBienLai CT WHERE BL.MaBienLai = CT.MaBienLai AND BL.MaHV = HV.MaHV AND BL.NguoiLap = NV.MaNV";
+            SqlDataReader sdr = DataProvider.ThucHienTruyVan(query, conn);
+            while (sdr.Read())
+            {
+                BienLaiDTO item = new BienLaiDTO();
+                item.MaBienLai = sdr["MaBienLai"].ToString();
+                item.MaHV = sdr["MaHV"].ToString();
+                item.HoTenHV = sdr["HoTenHV"].ToString();
+                item.MaKH = sdr["KhoaHoc"].ToString();
+                item.HocPhi = int.Parse(sdr["HocPhi"].ToString());
+                item.TongThanhToan = int.Parse(sdr["TongThanhToan"].ToString());
+                item.NguoiLap = sdr["NguoiLap"].ToString();
+                item.HoTenNV = sdr["HoTenNV"].ToString();
                 item.NgayLap = DateTime.Parse(sdr["NgayLap"].ToString());
                 lst_Bienlai.Add(item);
             }

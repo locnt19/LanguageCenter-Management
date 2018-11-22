@@ -15,6 +15,10 @@ namespace BUS
         {
             return _kh.loadKhoaHocDAO();
         }
+        public List<KhoaHocDTO> load_KhoaHocBUS()
+        {
+            return _kh.load_KhoaHocDAO();
+        }
         public List<KhoaHocDTO> timkhoahoc(string MaKH)
         {
             return _kh.TimKhoaHocDAO(MaKH);
@@ -23,13 +27,13 @@ namespace BUS
         {
             return _kh.get_HocPhi(MaKH);
         }
-        public int insert_khoahocBUS(string MaKH, string TenKH, string MoTa, double Hocphi)
+        public int insert_khoahocBUS(string MaKH, string TenKH, string MoTa, double Hocphi, string MaPhong, string MaCa, DateTime NgayBatDau)
         {
-            return _kh.insert_KhoaHocDAO(MaKH, TenKH, MoTa, Hocphi);
+            return 0;// _kh.insert_KhoaHocDAO(MaKH, TenKH, MoTa, Hocphi, MaPhong, MaCa, NgayBatDau);
         }
         public int update_khoahocBUS(string MaKH, string TenKH, string MoTa, double Hocphi)
         {
-            return _kh.update_khoahocDAO( MaKH, TenKH, MoTa, Hocphi);
+            return _kh.update_khoahocDAO(MaKH, TenKH, MoTa, Hocphi);
         }
         public int delete_khoahocBUS(KhoaHocDTO khdto)
         {
