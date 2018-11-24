@@ -17,7 +17,7 @@ namespace QuanLyTrungTamNgoaiNgu
         KhoaHocDTO _KhoaHocDangChon = null;
         KhoaHocBUS _KhoaHocBUS = new KhoaHocBUS();
         List<KhoaHocDTO> _LstKhoaHoc = new List<KhoaHocDTO>();
-        int _chucnang = 0; //1- Them, 2-Sua
+        int _chucnang = 0; //1 - Them khoa hoc, 2 - Them chi tiet, 3 - Sua khoa hoc
 
         public FormKhoaHoc()
         {
@@ -32,23 +32,28 @@ namespace QuanLyTrungTamNgoaiNgu
             txt_MaKH.ReadOnly = true;
             txt_tenkh.ReadOnly = true;
             txt_Mota.ReadOnly = true;
+            txt_hocphi.ReadOnly = true;
             ucCaHoc.Enabled = false;
-            ucKhoaHoc.Enabled = false;
+            cbb_KhoaHoc.Enabled = false;
             ucPhongHoc.Enabled = false;
             dtp_ngaybatdau.Enabled = false;
             dtp_ngaybatdau.Format = DateTimePickerFormat.Custom;
             dtp_ngaybatdau.CustomFormat = "dd/MM/yyyy";
-
         }
 
-        private void ForKhoaHoc_Load(object sender, EventArgs e)
+        private void FormKhoaHoc_Load(object sender, EventArgs e)
         {
-            //load_KhoaHoc();
+            load_KhoaHocVaChiTiet();
+            _LstKhoaHoc = _KhoaHocBUS.load_KhoaHocBUS();
+            //cbb_KhoaHoc.DataSource = null;
+            cbb_KhoaHoc.DataSource = _LstKhoaHoc;
+            cbb_KhoaHoc.DisplayMember = "TenKH";
+            cbb_KhoaHoc.ValueMember = "MaKH";
         }
 
-        private void load_KhoaHoc()
+        private void load_KhoaHocVaChiTiet()
         {
-            _LstKhoaHoc = _KhoaHocBUS.loadKhoaHocBUS();
+            _LstKhoaHoc = _KhoaHocBUS.load_KhoaHocVaChiTietBUS();
             dgv_khoahoc.DataSource = _LstKhoaHoc;
         }
 
@@ -56,7 +61,7 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             if (txt_tim.Text == "")
             {
-                load_KhoaHoc();
+                load_KhoaHocVaChiTiet();
             }
             else
             {
@@ -65,58 +70,13 @@ namespace QuanLyTrungTamNgoaiNgu
                 {
                     dgv_khoahoc.DataSource = null;
                     dgv_khoahoc.DataSource = _LstKhoaHoc.FindAll(o => o.MaKH == txt_tim.Text);
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Không tìm thấy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }           
-        }
-       
-        private void refreshkh()
-        {
-            _LstKhoaHoc = _KhoaHocBUS.loadKhoaHocBUS();
-            dgv_khoahoc.DataSource = _LstKhoaHoc;
-        }
-        private void BindingChiTiet()
-        {
-            if (_KhoaHocDangChon != null)
-            {
-                txt_MaKH.Text = _KhoaHocDangChon.MaKH;
-                txt_tenkh.Text = _KhoaHocDangChon.TenKH;
-                ucPhongHoc.PhongHoc = _KhoaHocDangChon.MaPhong;
-                txt_hocphi.Text = _KhoaHocDangChon.HocPhi.ToString();
-                txt_Mota.Text = _KhoaHocDangChon.MoTa;
-                dtp_ngaybatdau.Value = _KhoaHocDangChon.Ngaybatdau;
-                ucCaHoc.CaHoc = _KhoaHocDangChon.MaCa;
-
-
             }
-            else
-            {
-                txt_MaKH.Text = string.Empty;
-                txt_tenkh.Text = string.Empty;
-                ucPhongHoc.PhongHoc = string.Empty;
-                txt_hocphi.Text = string.Empty;
-                txt_Mota.Text = string.Empty;
-                dtp_ngaybatdau.Value = DateTime.Now;
-                ucCaHoc.CaHoc = string.Empty;
-            }
-        }
-        private void GetDataChiTiet()
-        {
-            if (_KhoaHocDangChon == null)
-            {
-                _KhoaHocDangChon = new KhoaHocDTO();
-            }
-            txt_MaKH.Text = _KhoaHocDangChon.MaKH;
-            txt_tenkh.Text = _KhoaHocDangChon.TenKH;
-            ucPhongHoc.PhongHoc = _KhoaHocDangChon.MaPhong;
-            txt_hocphi.Text = _KhoaHocDangChon.HocPhi.ToString();
-            txt_Mota.Text = _KhoaHocDangChon.MoTa;
-            dtp_ngaybatdau.Value = _KhoaHocDangChon.Ngaybatdau;
-            ucCaHoc.CaHoc = _KhoaHocDangChon.MaCa;
         }
 
         private void dgv_khoahoc_SelectionChanged(object sender, EventArgs e)
@@ -130,8 +90,58 @@ namespace QuanLyTrungTamNgoaiNgu
                 _KhoaHocDangChon = null;
             }
 
-            BindingChiTiet();
+            ThongTinChiTiet();
         }
+
+        private void ThongTinChiTiet()
+        {
+            if (_KhoaHocDangChon != null)
+            {
+                txt_MaKH.Text = _KhoaHocDangChon.MaKH;
+                txt_tenkh.Text = _KhoaHocDangChon.TenKH;
+                ucPhongHoc.PhongHoc = _KhoaHocDangChon.MaPhong;
+                txt_hocphi.Text = _KhoaHocDangChon.HocPhi.ToString();
+                txt_Mota.Text = _KhoaHocDangChon.MoTa;
+                dtp_ngaybatdau.Value = _KhoaHocDangChon.Ngaybatdau;
+                ucCaHoc.CaHoc = _KhoaHocDangChon.MaCa;
+                cbb_KhoaHoc.SelectedValue = _KhoaHocDangChon.MaKH;
+            }
+            else
+            {
+                cbb_KhoaHoc.SelectedValue = "0";
+                txt_MaKH.Text = string.Empty;
+                txt_tenkh.Text = string.Empty;
+                ucPhongHoc.PhongHoc = "0";
+                txt_hocphi.Text = string.Empty;
+                txt_Mota.Text = string.Empty;
+                dtp_ngaybatdau.Value = DateTime.Now;
+                ucCaHoc.CaHoc = "0";
+            }
+        }
+
+
+
+        private void refreshkh()
+        {
+            //_LstKhoaHoc = _KhoaHocBUS.loadKhoaHocBUS();
+            dgv_khoahoc.DataSource = _LstKhoaHoc;
+        }
+
+        private void GetDataChiTiet()
+        {
+            //if (_KhoaHocDangChon == null)
+            //{
+            //    _KhoaHocDangChon = new KhoaHocDTO();
+            //}
+            //txt_MaKH.Text = _KhoaHocDangChon.MaKH;
+            //txt_tenkh.Text = _KhoaHocDangChon.TenKH;
+            //ucPhongHoc.PhongHoc = _KhoaHocDangChon.MaPhong;
+            //txt_hocphi.Text = _KhoaHocDangChon.HocPhi.ToString();
+            //txt_Mota.Text = _KhoaHocDangChon.MoTa;
+            //dtp_ngaybatdau.Value = _KhoaHocDangChon.Ngaybatdau;
+            //ucCaHoc.CaHoc = _KhoaHocDangChon.MaCa;
+        }
+
 
         private void btn_them_Click(object sender, EventArgs e)
         {
@@ -147,14 +157,19 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            txt_MaKH.Enabled = false;
-            txt_tenkh.Enabled = true;
-            txt_Mota.Enabled = true;
-            txt_hocphi.Enabled = true;
-            btn_sua.Enabled = true;
+            txt_MaKH.ReadOnly = true;
+            txt_tenkh.ReadOnly = false;
+            txt_Mota.ReadOnly = false;
+            txt_hocphi.ReadOnly = false;
+            cbb_KhoaHoc.Enabled = true;
+            ucPhongHoc.Enabled = true;
+            ucCaHoc.Enabled = true;
+            dtp_ngaybatdau.Enabled = true;
+            btn_sua.Enabled = false;
             btn_xoa.Enabled = false;
-            dgv_khoahoc.ClearSelection();
-            _chucnang = 2;
+            btn_ThemChiTiet.Enabled = false;
+            btn_ThemKhoaHoc.Enabled = false;
+            _chucnang = 3;
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -162,24 +177,33 @@ namespace QuanLyTrungTamNgoaiNgu
             if (_KhoaHocDangChon != null)
             {
                 GetDataChiTiet();
-                if (_KhoaHocBUS.delete_khoahocBUS(_KhoaHocDangChon) != 0)
-                {
-                    MessageBox.Show("Xóa thành công !");
-                    refreshkh();
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn tài khoản cần xóa !");
-                }
+                //if (_KhoaHocBUS.delete_khoahocBUS(_KhoaHocDangChon) != 0)
+                //{
+                //    MessageBox.Show("Xóa thành công !");
+                //    refreshkh();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Vui lòng chọn tài khoản cần xóa !");
+                //}
             }
         }
 
         private void btn_huy_Click(object sender, EventArgs e)
         {
-            txt_MaKH.Enabled = false;
-            txt_tenkh.Enabled = false;
-            txt_Mota.Enabled = false;
-            txt_hocphi.Enabled = false;
+            Huy();
+        }
+
+        private void Huy()
+        {
+            txt_MaKH.ReadOnly = true;
+            txt_tenkh.ReadOnly = true;
+            txt_Mota.ReadOnly = true;
+            txt_hocphi.ReadOnly = true;
+            txt_MaKH.Text = string.Empty;
+            txt_tenkh.Text = string.Empty;
+            txt_Mota.Text = string.Empty;
+            txt_hocphi.Text = string.Empty;
             btn_ThemKhoaHoc.Enabled = true;
             btn_sua.Enabled = true;
             btn_xoa.Enabled = true;
@@ -192,45 +216,67 @@ namespace QuanLyTrungTamNgoaiNgu
             {
                 case 1:
                     #region Thêm khóa học
-                    if (txt_MaKH.Text.Trim() == "" || txt_tenkh.Text.Trim() == "" || txt_Mota.Text.Trim() == ""||txt_hocphi.Text.Trim() == "")
-                    {
-                        MessageBox.Show("Vui lòng nhập đủ thông tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        _KhoaHocBUS = new KhoaHocBUS();
-                        int r = 0;
-                        //int r = _KhoaHocBUS.insert_khoahocBUS(txt_MaKH.Text, txt_tenkh.Text, txt_Mota.Text,double.Parse(txt_hocphi.Text)) ;
-                        if (r > 0)
-                        {
-                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            load_KhoaHoc();
-                            txt_MaKH.Enabled = false;
-                            txt_tenkh.Enabled = false;
-                            txt_Mota.Enabled = false;
-                            txt_hocphi.Enabled = false;
-                        }
-                        else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    break;
-                    #endregion
-                case 2:
-                    #region Update khóa học
                     if (txt_MaKH.Text.Trim() == "" || txt_tenkh.Text.Trim() == "" || txt_Mota.Text.Trim() == "" || txt_hocphi.Text.Trim() == "")
                     {
                         MessageBox.Show("Vui lòng nhập đủ thông tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        int r = _KhoaHocBUS.update_khoahocBUS(txt_MaKH.Text, txt_tenkh.Text, txt_Mota.Text, double.Parse(txt_hocphi.ToString()));
+                        int r = _KhoaHocBUS.insert_KhoaHocBUS(txt_MaKH.Text, txt_tenkh.Text, txt_Mota.Text, double.Parse(txt_hocphi.Text));
                         if (r > 0)
                         {
+                            MessageBox.Show("Thêm khóa học mới thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Huy();
+                        }
+                        else MessageBox.Show("Thêm khóa học thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    break;
+                    #endregion
+                case 2:
+                    #region Thêm chi tiết khóa học
+
+                    if (cbb_KhoaHoc.SelectedValue.ToString() != "0" && ucCaHoc.CaHoc != "0" && ucPhongHoc.PhongHoc != "0")
+                    {
+                        int r = _KhoaHocBUS.insert_ChiTietKhoaHocBUS(cbb_KhoaHoc.SelectedValue.ToString(), ucPhongHoc.PhongHoc, ucCaHoc.CaHoc, dtp_ngaybatdau.Value);
+                        if (r > 0)
+                        {
+                            MessageBox.Show("Thêm chi tiết thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Huy();
+                            load_KhoaHocVaChiTiet();
+                            ucCaHoc.Enabled = false;
+                            ucPhongHoc.Enabled = false;
+                            cbb_KhoaHoc.Enabled = false;
+                            dtp_ngaybatdau.Enabled = false;
+                        }
+                        else MessageBox.Show("Thêm chi tiết thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng nhập đủ thông tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    break;
+                    #endregion
+                case 3:
+                    #region Update khóa học
+                    if (cbb_KhoaHoc.SelectedValue.ToString() == "0" || ucPhongHoc.PhongHoc == "0" || ucCaHoc.CaHoc == "0" || txt_tenkh.Text.Trim() == "" || txt_Mota.Text.Trim() == "" || txt_hocphi.Text.Trim() == "")
+                    {
+                        MessageBox.Show("Vui lòng nhập đủ thông tin ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        int r = _KhoaHocBUS.update_KhoaHocBUS(txt_MaKH.Text, txt_tenkh.Text, txt_Mota.Text, double.Parse(txt_hocphi.Text));
+                        int r2 = _KhoaHocBUS.update_ChiTietKhoaHocBUS(txt_MaKH.Text, ucPhongHoc.PhongHoc, ucCaHoc.CaHoc, dtp_ngaybatdau.Value);
+                        if (r > 0 && r2 > 0)
+                        {
                             MessageBox.Show("Update thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            load_KhoaHoc();
-                            txt_MaKH.Enabled = false;
-                            txt_tenkh.Enabled = false;
-                            txt_Mota.Enabled = false;
-                            txt_hocphi.Enabled = false;
+                            load_KhoaHocVaChiTiet();
+                            txt_tenkh.ReadOnly = true;
+                            txt_Mota.ReadOnly = true;
+                            txt_hocphi.ReadOnly = true;
+                            ucCaHoc.Enabled = false;
+                            ucPhongHoc.Enabled = false;
+                            cbb_KhoaHoc.Enabled = false;
+                            dtp_ngaybatdau.Enabled = false;
                         }
                         else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -244,8 +290,29 @@ namespace QuanLyTrungTamNgoaiNgu
         private void btn_tim_Click(object sender, EventArgs e)
         {
             load_KhoaHoctheomakh();
-           
+
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            cbb_KhoaHoc.DataSource = null;
+            cbb_KhoaHoc.DataSource = _LstKhoaHoc;
+            cbb_KhoaHoc.DisplayMember = "TenKH";
+            cbb_KhoaHoc.ValueMember = "MaKH";
+            MessageBox.Show("a");
+        }
+
+        private void btn_ThemChiTiet_Click(object sender, EventArgs e)
+        {
+            Huy();
+            cbb_KhoaHoc.Enabled = true;
+            ucPhongHoc.Enabled = true;
+            ucCaHoc.Enabled = true;
+            dtp_ngaybatdau.Enabled = true;
+            _chucnang = 2;
+        }
+
+
 
 
     }

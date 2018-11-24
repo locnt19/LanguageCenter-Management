@@ -37,7 +37,7 @@ namespace DAO
             cmd.Parameters.AddRange(pars);
             return cmd.ExecuteReader();
         }
-        public static int executeinsert(string truyvan, SqlParameter[] par, SqlConnection conn)
+        public static int TruyVanInsert(string truyvan, SqlParameter[] par, SqlConnection conn)
         {
             SqlCommand cmd = new SqlCommand(truyvan, conn);
             int rowsAffected;
@@ -54,21 +54,24 @@ namespace DAO
             }
             return rowsAffected;
         }
-        public static int executeupdate(string truyvan, SqlParameter[] par, SqlConnection conn)
+
+        public static int TruyVanUpdate(string truyvan, SqlParameter par, SqlConnection conn)
         {
             SqlCommand cmd = new SqlCommand(truyvan, conn);
             int rowsAffected;
-            try
-            {
-                cmd.Parameters.AddRange(par);
-                adt.InsertCommand = cmd;
-                rowsAffected = cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch (SqlException e)
-            {
-                return 0;
-            }
+            cmd.Parameters.Add(par);
+            rowsAffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            return rowsAffected;
+        }
+
+        public static int TruyVanUpdate(string truyvan, SqlParameter[] par, SqlConnection conn)
+        {
+            SqlCommand cmd = new SqlCommand(truyvan, conn);
+            int rowsAffected;
+            cmd.Parameters.AddRange(par);
+            rowsAffected = cmd.ExecuteNonQuery();
+            conn.Close();
             return rowsAffected;
         }
     }

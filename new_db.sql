@@ -110,7 +110,7 @@ CREATE TABLE CaHoc
 	MoTa nvarchar(50) NOT NULL,
 	STT int DEFAULT 1
 )
-
+INSERT INTO CaHoc(MaCa, MoTa) VALUES('0', N'none')
 INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA01', N'Sáng từ 8:00-9:30')
 INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA02', N'Sáng từ 10:00-11:30')
 INSERT INTO CaHoc(MaCa, MoTa) VALUES('CA03', N'Chiều từ 17:30-19:00')
@@ -138,7 +138,7 @@ CREATE TABLE Phong
 	MoTa nvarchar(50) NOT NULL,
 	STT int DEFAULT 1
 )
-
+INSERT INTO Phong(MaPhong, MoTa) VALUES('0', N'none')
 INSERT INTO Phong(MaPhong, MoTa) VALUES('F1.1', N'Phòng Đào tạo F1.1')
 INSERT INTO Phong(MaPhong, MoTa) VALUES('F1.2', N'Phòng Kế toán F1.2')
 INSERT INTO Phong(MaPhong, MoTa) VALUES('F1.3', N'Phòng Quản lý F1.3')

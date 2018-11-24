@@ -7,10 +7,13 @@ SELECT * FROM KetQua
 Update DiemDanh Set SoNgayVang=10 Where MaHV='HV01' and MaLop='LOP01'
 SELECT * FROM DiemDanh
 
-SELECT BL.MaBienLai, BL.MaHV, CT.KhoaHoc, CT.HocPhi, BL.TongThanhToan, BL.NguoiLap, BL.NgayLap FROM BienLai BL, ChiTietBienLai CT WHERE BL.MaBienLai = CT.MaBienLai AND BL.MaBienLai = 'BL01'
 
 SELECT BL.MaBienLai, BL.MaHV, HV.HoTen as HoTenHV, CT.KhoaHoc, CT.HocPhi, BL.TongThanhToan, BL.NguoiLap, NV.HoTen as HoTenNV, BL.NgayLap FROM HocVien HV, NhanVien NV, BienLai BL, ChiTietBienLai CT WHERE BL.MaBienLai = CT.MaBienLai AND BL.MaHV = HV.MaHV AND BL.NguoiLap = NV.MaNV AND ( BL.MaBienLai like '%toán 1%' OR HV.HoTen like '%toán 1%' OR NV.HoTen like '%toán 1%')
+select * from CaHoc
 
-SELECT BL.MaBienLai, BL.MaHV, HV.HoTen as HoTenHV, CT.KhoaHoc, CT.HocPhi, BL.TongThanhToan, BL.NguoiLap, NV.HoTen as HoTenNV, BL.NgayLap FROM HocVien HV, NhanVien NV, BienLai BL, ChiTietBienLai CT WHERE BL.MaBienLai = CT.MaBienLai AND BL.MaHV = HV.MaHV AND BL.NguoiLap = NV.MaNV AND ( BL.MaBienLai like '%toán 1%' OR HV.HoTen like '%toán 1%' OR NV.HoTen like '%toán 1%')
+select * from KhoaHoc
 
-select * from ChiTietBienLai
+select KH.MaKH, KH.TenKH, KH.MoTa, KH.HocPhi, CT.MaPhong, CT.MaCa, CT.NgayBatDau from KhoaHoc KH, ChiTietKhoaHoc CT where KH.MaKH = CT.MaKH
+
+update ChiTietKhoaHoc set MaKH='777', MaPhong='F1.2', MaCa='CA02', NgayBatDau='2018-11-25' where MaKH='777' and MaPhong = 'F2.1' and MaCa = 'CA01'
+select * from ChiTietKhoaHoc

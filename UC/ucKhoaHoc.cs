@@ -31,6 +31,11 @@ namespace UC
 
         private void ucKhoaHoc_Load(object sender, EventArgs e)
         {
+            LoadKhoaHoc();
+        }
+        
+        private void LoadKhoaHoc()
+        {
             List<KhoaHoc> lst_KhoaHoc = new List<KhoaHoc>();
             SqlConnection conn = DataProvider.TaoKetNoi();
             string query = "Select * From KhoaHoc Where STT=1";

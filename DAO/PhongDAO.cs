@@ -53,7 +53,7 @@ namespace DAO
             para[0] = new SqlParameter("@MaPhong", phongdto.MaPhong);
             para[1] = new SqlParameter("@MoTa", phongdto.MoTa);
             SqlConnection conn = DataProvider.TaoKetNoi();
-            int ketqua = DataProvider.executeinsert(insert, para, conn);
+            int ketqua = DataProvider.TruyVanInsert(insert, para, conn);
             conn.Close();
             return ketqua;
         }
@@ -64,7 +64,7 @@ namespace DAO
             para[0] = new SqlParameter("@MaPhong", phongdto.MaPhong);
             para[1] = new SqlParameter("@MoTa", phongdto.MoTa);
             SqlConnection conn = DataProvider.TaoKetNoi();
-            int ketqua = DataProvider.executeupdate(update, para, conn);
+            int ketqua = DataProvider.TruyVanUpdate(update, para, conn);
             conn.Close();
             return ketqua;
         }
@@ -74,7 +74,7 @@ namespace DAO
             SqlParameter[] para = new SqlParameter[1];
             para[0] = new SqlParameter("@MaPhong", phongdto.MaPhong);
             SqlConnection conn = DataProvider.TaoKetNoi();
-            int ketqua = DataProvider.executeupdate(delete, para, conn);
+            int ketqua = DataProvider.TruyVanUpdate(delete, para, conn);
             conn.Close();
             return ketqua;
         }

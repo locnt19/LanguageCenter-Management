@@ -45,17 +45,20 @@
             this.btn_luu = new System.Windows.Forms.Button();
             this.dgv_khoahoc = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Mota = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ucCaHoc = new UC.ucCaHoc();
-            this.ucPhongHoc = new UC.ucPhongHoc();
-            this.ucKhoaHoc = new UC.ucKhoaHoc();
             this.txt_MaKH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_ThemChiTiet = new System.Windows.Forms.Button();
+            this.btn_Refresh = new System.Windows.Forms.Button();
+            this.ucPhongHoc = new UC.ucPhongHoc();
+            this.cbb_KhoaHoc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_khoahoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +83,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(494, 206);
+            this.label5.Location = new System.Drawing.Point(494, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 25);
             this.label5.TabIndex = 7;
@@ -88,7 +91,7 @@
             // 
             // dtp_ngaybatdau
             // 
-            this.dtp_ngaybatdau.Location = new System.Drawing.Point(641, 202);
+            this.dtp_ngaybatdau.Location = new System.Drawing.Point(641, 201);
             this.dtp_ngaybatdau.Name = "dtp_ngaybatdau";
             this.dtp_ngaybatdau.Size = new System.Drawing.Size(199, 33);
             this.dtp_ngaybatdau.TabIndex = 8;
@@ -144,9 +147,9 @@
             // 
             // btn_ThemKhoaHoc
             // 
-            this.btn_ThemKhoaHoc.Location = new System.Drawing.Point(62, 331);
+            this.btn_ThemKhoaHoc.Location = new System.Drawing.Point(118, 331);
             this.btn_ThemKhoaHoc.Name = "btn_ThemKhoaHoc";
-            this.btn_ThemKhoaHoc.Size = new System.Drawing.Size(178, 44);
+            this.btn_ThemKhoaHoc.Size = new System.Drawing.Size(165, 44);
             this.btn_ThemKhoaHoc.TabIndex = 15;
             this.btn_ThemKhoaHoc.Text = "Thêm khóa học";
             this.btn_ThemKhoaHoc.UseVisualStyleBackColor = true;
@@ -154,7 +157,7 @@
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(429, 331);
+            this.btn_sua.Location = new System.Drawing.Point(462, 331);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(94, 44);
             this.btn_sua.TabIndex = 16;
@@ -164,7 +167,7 @@
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(542, 331);
+            this.btn_xoa.Location = new System.Drawing.Point(563, 331);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(94, 44);
             this.btn_xoa.TabIndex = 17;
@@ -174,7 +177,7 @@
             // 
             // btn_huy
             // 
-            this.btn_huy.Location = new System.Drawing.Point(653, 331);
+            this.btn_huy.Location = new System.Drawing.Point(664, 331);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(94, 44);
             this.btn_huy.TabIndex = 18;
@@ -197,9 +200,11 @@
             this.dgv_khoahoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_khoahoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.MaPhong,
+            this.MaCa,
+            this.Column5});
             this.dgv_khoahoc.Location = new System.Drawing.Point(62, 395);
             this.dgv_khoahoc.Name = "dgv_khoahoc";
             this.dgv_khoahoc.Size = new System.Drawing.Size(802, 334);
@@ -209,14 +214,8 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "MaKH";
-            this.Column1.HeaderText = "Mã Khóa học";
+            this.Column1.HeaderText = "Khóa học";
             this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenKH";
-            this.Column2.HeaderText = "Tên Khóa học";
-            this.Column2.Name = "Column2";
             // 
             // Column3
             // 
@@ -229,6 +228,24 @@
             this.Column4.DataPropertyName = "HocPhi";
             this.Column4.HeaderText = "Học phí";
             this.Column4.Name = "Column4";
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Phòng";
+            this.MaPhong.Name = "MaPhong";
+            // 
+            // MaCa
+            // 
+            this.MaCa.DataPropertyName = "MaCa";
+            this.MaCa.HeaderText = "Ca";
+            this.MaCa.Name = "MaCa";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NgayBatDau";
+            this.Column5.HeaderText = "Ngày bắt đầu";
+            this.Column5.Name = "Column5";
             // 
             // txt_Mota
             // 
@@ -250,33 +267,13 @@
             // 
             // ucCaHoc
             // 
-            this.ucCaHoc.CaHoc = "CA01";
+            this.ucCaHoc.CaHoc = "0";
             this.ucCaHoc.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.ucCaHoc.Location = new System.Drawing.Point(552, 155);
+            this.ucCaHoc.Location = new System.Drawing.Point(552, 153);
             this.ucCaHoc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ucCaHoc.Name = "ucCaHoc";
             this.ucCaHoc.Size = new System.Drawing.Size(290, 33);
             this.ucCaHoc.TabIndex = 23;
-            // 
-            // ucPhongHoc
-            // 
-            this.ucPhongHoc.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.ucPhongHoc.Location = new System.Drawing.Point(557, 103);
-            this.ucPhongHoc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ucPhongHoc.Name = "ucPhongHoc";
-            this.ucPhongHoc.PhongHoc = "F1.1";
-            this.ucPhongHoc.Size = new System.Drawing.Size(285, 36);
-            this.ucPhongHoc.TabIndex = 24;
-            // 
-            // ucKhoaHoc
-            // 
-            this.ucKhoaHoc.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucKhoaHoc.KhoaHoc = "0";
-            this.ucKhoaHoc.Location = new System.Drawing.Point(639, 53);
-            this.ucKhoaHoc.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.ucKhoaHoc.Name = "ucKhoaHoc";
-            this.ucKhoaHoc.Size = new System.Drawing.Size(202, 34);
-            this.ucKhoaHoc.TabIndex = 25;
             // 
             // txt_MaKH
             // 
@@ -296,23 +293,53 @@
             // 
             // btn_ThemChiTiet
             // 
-            this.btn_ThemChiTiet.Location = new System.Drawing.Point(245, 331);
+            this.btn_ThemChiTiet.Location = new System.Drawing.Point(290, 331);
             this.btn_ThemChiTiet.Name = "btn_ThemChiTiet";
-            this.btn_ThemChiTiet.Size = new System.Drawing.Size(178, 44);
+            this.btn_ThemChiTiet.Size = new System.Drawing.Size(165, 44);
             this.btn_ThemChiTiet.TabIndex = 28;
             this.btn_ThemChiTiet.Text = "Thêm chi tiết";
             this.btn_ThemChiTiet.UseVisualStyleBackColor = true;
+            this.btn_ThemChiTiet.Click += new System.EventHandler(this.btn_ThemChiTiet_Click);
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.Location = new System.Drawing.Point(67, 331);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(44, 44);
+            this.btn_Refresh.TabIndex = 29;
+            this.btn_Refresh.Text = "R";
+            this.btn_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
+            // ucPhongHoc
+            // 
+            this.ucPhongHoc.Font = new System.Drawing.Font("Tahoma", 15.75F);
+            this.ucPhongHoc.Location = new System.Drawing.Point(557, 102);
+            this.ucPhongHoc.Margin = new System.Windows.Forms.Padding(6);
+            this.ucPhongHoc.Name = "ucPhongHoc";
+            this.ucPhongHoc.PhongHoc = "0";
+            this.ucPhongHoc.Size = new System.Drawing.Size(284, 36);
+            this.ucPhongHoc.TabIndex = 30;
+            // 
+            // cbb_KhoaHoc
+            // 
+            this.cbb_KhoaHoc.FormattingEnabled = true;
+            this.cbb_KhoaHoc.Location = new System.Drawing.Point(642, 55);
+            this.cbb_KhoaHoc.Name = "cbb_KhoaHoc";
+            this.cbb_KhoaHoc.Size = new System.Drawing.Size(199, 33);
+            this.cbb_KhoaHoc.TabIndex = 31;
             // 
             // FormKhoaHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 741);
+            this.Controls.Add(this.cbb_KhoaHoc);
+            this.Controls.Add(this.ucPhongHoc);
+            this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.btn_ThemChiTiet);
             this.Controls.Add(this.txt_MaKH);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.ucKhoaHoc);
-            this.Controls.Add(this.ucPhongHoc);
             this.Controls.Add(this.ucCaHoc);
             this.Controls.Add(this.txt_Mota);
             this.Controls.Add(this.label8);
@@ -335,8 +362,9 @@
             this.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "FormKhoaHoc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKhoaHoc";
-            this.Load += new System.EventHandler(this.ForKhoaHoc_Load);
+            this.Load += new System.EventHandler(this.FormKhoaHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_khoahoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -363,15 +391,18 @@
         private System.Windows.Forms.DataGridView dgv_khoahoc;
         private System.Windows.Forms.TextBox txt_Mota;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private UC.ucCaHoc ucCaHoc;
-        private UC.ucPhongHoc ucPhongHoc;
-        private UC.ucKhoaHoc ucKhoaHoc;
         private System.Windows.Forms.TextBox txt_MaKH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_ThemChiTiet;
+        private System.Windows.Forms.Button btn_Refresh;
+        private UC.ucPhongHoc ucPhongHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.ComboBox cbb_KhoaHoc;
     }
 }
