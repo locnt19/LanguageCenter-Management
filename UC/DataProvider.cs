@@ -9,8 +9,8 @@ namespace UC
 {
     public class DataProvider
     {
-        //private static string ChuoiKetNoi = @"Data Source=.;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
-        private static string ChuoiKetNoi = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
+        private static string ChuoiKetNoi = @"Data Source=.;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
+        //private static string ChuoiKetNoi = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
 
         public static SqlConnection TaoKetNoi()
         {

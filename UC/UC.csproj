@@ -75,6 +75,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyTrungTamNgoaiNguDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyTrungTamNgoaiNguDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ThoiKhoaBieu.cs" />
     <Compile Include="ucCaHoc.cs">
       <SubType>UserControl</SubType>
@@ -184,6 +194,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="QuanLyTrungTamNgoaiNguDataSet.xsc">
+      <DependentUpon>QuanLyTrungTamNgoaiNguDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyTrungTamNgoaiNguDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyTrungTamNgoaiNguDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyTrungTamNgoaiNguDataSet.xss">
+      <DependentUpon>QuanLyTrungTamNgoaiNguDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
