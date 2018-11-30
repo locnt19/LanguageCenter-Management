@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             this.grb_Thongtin = new System.Windows.Forms.GroupBox();
+            this.btn_luu = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dtp_NgayVaoLam = new System.Windows.Forms.DateTimePicker();
+            this.btn_huy = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_TenTK = new System.Windows.Forms.TextBox();
+            this.btn_sua = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_xoa = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
             this.txt_MaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,11 +67,16 @@
             // 
             // grb_Thongtin
             // 
+            this.grb_Thongtin.Controls.Add(this.btn_luu);
             this.grb_Thongtin.Controls.Add(this.label5);
             this.grb_Thongtin.Controls.Add(this.dtp_NgayVaoLam);
+            this.grb_Thongtin.Controls.Add(this.btn_huy);
             this.grb_Thongtin.Controls.Add(this.label4);
             this.grb_Thongtin.Controls.Add(this.txt_TenTK);
+            this.grb_Thongtin.Controls.Add(this.btn_sua);
             this.grb_Thongtin.Controls.Add(this.label3);
+            this.grb_Thongtin.Controls.Add(this.btn_xoa);
+            this.grb_Thongtin.Controls.Add(this.btn_them);
             this.grb_Thongtin.Controls.Add(this.txt_MaNV);
             this.grb_Thongtin.Controls.Add(this.label2);
             this.grb_Thongtin.Controls.Add(this.label1);
@@ -77,12 +87,23 @@
             this.grb_Thongtin.Controls.Add(this.txt_Tim);
             this.grb_Thongtin.Controls.Add(this.ucThongTinNV);
             this.grb_Thongtin.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.grb_Thongtin.Location = new System.Drawing.Point(9, 10);
+            this.grb_Thongtin.Location = new System.Drawing.Point(22, 10);
             this.grb_Thongtin.Name = "grb_Thongtin";
-            this.grb_Thongtin.Size = new System.Drawing.Size(716, 416);
+            this.grb_Thongtin.Size = new System.Drawing.Size(910, 416);
             this.grb_Thongtin.TabIndex = 10;
             this.grb_Thongtin.TabStop = false;
             this.grb_Thongtin.Text = "Thông tin";
+            // 
+            // btn_luu
+            // 
+            this.btn_luu.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_luu.Location = new System.Drawing.Point(784, 292);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(75, 33);
+            this.btn_luu.TabIndex = 35;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click_1);
             // 
             // label5
             // 
@@ -100,6 +121,17 @@
             this.dtp_NgayVaoLam.Size = new System.Drawing.Size(200, 33);
             this.dtp_NgayVaoLam.TabIndex = 28;
             // 
+            // btn_huy
+            // 
+            this.btn_huy.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_huy.Location = new System.Drawing.Point(784, 229);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(75, 33);
+            this.btn_huy.TabIndex = 34;
+            this.btn_huy.Text = "Hủy";
+            this.btn_huy.UseVisualStyleBackColor = true;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click_1);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -116,6 +148,17 @@
             this.txt_TenTK.Size = new System.Drawing.Size(200, 33);
             this.txt_TenTK.TabIndex = 26;
             // 
+            // btn_sua
+            // 
+            this.btn_sua.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sua.Location = new System.Drawing.Point(784, 165);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(75, 33);
+            this.btn_sua.TabIndex = 33;
+            this.btn_sua.Text = "Sửa";
+            this.btn_sua.UseVisualStyleBackColor = true;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click_1);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -124,6 +167,28 @@
             this.label3.Size = new System.Drawing.Size(80, 25);
             this.label3.TabIndex = 25;
             this.label3.Text = "Mã NV:";
+            // 
+            // btn_xoa
+            // 
+            this.btn_xoa.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xoa.Location = new System.Drawing.Point(784, 100);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(75, 33);
+            this.btn_xoa.TabIndex = 32;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click_1);
+            // 
+            // btn_them
+            // 
+            this.btn_them.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them.Location = new System.Drawing.Point(784, 37);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(75, 33);
+            this.btn_them.TabIndex = 31;
+            this.btn_them.Text = "Thêm";
+            this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click_1);
             // 
             // txt_MaNV
             // 
@@ -166,7 +231,7 @@
             // 
             // ucChucVu
             // 
-            this.ucChucVu.ChucVu = "UC.ChucVu";
+            this.ucChucVu.ChucVu = "GV";
             this.ucChucVu.Font = new System.Drawing.Font("Tahoma", 15.75F);
             this.ucChucVu.Location = new System.Drawing.Point(400, 229);
             this.ucChucVu.Margin = new System.Windows.Forms.Padding(6);
@@ -182,6 +247,7 @@
             this.btn_Tim.TabIndex = 16;
             this.btn_Tim.Text = "Tìm";
             this.btn_Tim.UseVisualStyleBackColor = true;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // txt_Tim
             // 
@@ -221,7 +287,7 @@
             this.Luong,
             this.HeSoLuong,
             this.TenTK});
-            this.dgv_NhanVien.Location = new System.Drawing.Point(9, 442);
+            this.dgv_NhanVien.Location = new System.Drawing.Point(4, 486);
             this.dgv_NhanVien.Name = "dgv_NhanVien";
             this.dgv_NhanVien.Size = new System.Drawing.Size(928, 251);
             this.dgv_NhanVien.TabIndex = 11;
@@ -304,7 +370,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 719);
+            this.ClientSize = new System.Drawing.Size(1038, 749);
             this.Controls.Add(this.dgv_NhanVien);
             this.Controls.Add(this.grb_Thongtin);
             this.Name = "FormNhanVien";
@@ -347,5 +413,10 @@
         private System.Windows.Forms.TextBox txt_TenTK;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtp_NgayVaoLam;
+        private System.Windows.Forms.Button btn_luu;
+        private System.Windows.Forms.Button btn_huy;
+        private System.Windows.Forms.Button btn_sua;
+        private System.Windows.Forms.Button btn_xoa;
+        private System.Windows.Forms.Button btn_them;
     }
 }

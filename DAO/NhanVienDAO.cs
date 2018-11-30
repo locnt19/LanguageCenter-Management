@@ -67,5 +67,87 @@ namespace DAO
             conn.Close();
             return lst_NhanVien;
         }
+        public List<NhanVienDTO> tim_NhanvienDAO(string MaNV)
+        {
+            List<NhanVienDTO> lst_Phong = new List<NhanVienDTO>();
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            string query = "SELECT * FROM NhanVien where MaNV LIKE N'%{0}%'";
+            //SqlParameter par = new SqlParameter("@MaNV", MaNV);
+            //SqlDataReader sdr = DataProvider.ThucHienTruyVan(query, par, conn);
+            SqlDataReader sdr = DataProvider.ThucHienTruyVan(string.Format(query, MaNV), conn);
+            while (sdr.Read())
+            {
+                NhanVienDTO nv = new NhanVienDTO();
+                nv.MaNV = sdr["MaNV"].ToString();
+                nv.HoTen = sdr["HoTen"].ToString();
+                nv.GioiTinh = (int)sdr["GioiTinh"];
+                nv.NgaySinh = (DateTime)sdr["NgaySinh"];
+                nv.Email = sdr["Email"].ToString();
+                nv.SDT = sdr["SDT"].ToString();
+                nv.ChucVu = sdr["ChucVu"].ToString();
+                nv.TenTK = sdr["TenTK"].ToString();
+                nv.Luong = double.Parse(sdr["Luong"].ToString());
+                nv.HeSoLuong = double.Parse(sdr["HeSoLuong"].ToString());
+                nv.NgayVaoLam = (DateTime)sdr["NgayVaoLam"];
+                nv.DiaChi = sdr["DiaChi"].ToString();
+                nv.STT = (int)sdr["STT"];
+                lst_Phong.Add(nv);
+            }
+            sdr.Close();
+            conn.Close();
+            return lst_Phong;
+        }
+        public int insert_NhanvienDAO(NhanVienDTO nvdto)
+        {
+            string insert = "insert into NHANVIEN values (@MaNV,@TenTK,@HoTen,@GioiTinh,@NgaySinh,@Email,@Sdt,@DiaChi,@ChucVu,@NgayVaoLam,@Luong,@HeSoLuong,1)";
+            SqlParameter[] para = new SqlParameter[12];
+            para[0] = new SqlParameter("@MaNV", nvdto.MaNV);
+            para[1] = new SqlParameter("@TenTK", nvdto.TenTK);
+            para[2] = new SqlParameter("@HoTen", nvdto.HoTen);
+            para[3] = new SqlParameter("@GioiTinh", nvdto.GioiTinh);
+            para[4] = new SqlParameter("@NgaySinh", nvdto.NgaySinh.ToString("yyyy/MM/dd"));
+            para[5] = new SqlParameter("@Email", nvdto.Email);
+            para[6] = new SqlParameter("@Sdt", nvdto.SDT);
+            para[7] = new SqlParameter("@DiaChi", nvdto.DiaChi);
+            para[8] = new SqlParameter("@ChucVu", nvdto.ChucVu);
+            para[9] = new SqlParameter("@NgayVaoLam", nvdto.NgayVaoLam.ToString("yyyy/MM/dd"));
+            para[10] = new SqlParameter("@Luong", nvdto.Luong);
+            para[11] = new SqlParameter("@HeSoLuong", nvdto.HeSoLuong);
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            int ketqua = DataProvider.TruyVanInsert(insert, para, conn);
+            conn.Close();
+            return ketqua;
+        }
+
+        public int update_NhanvienDAO(NhanVienDTO nvdto)
+        {
+            string update = "update NHANVIEN set HoTen=@HoTen,GioiTinh=@GioiTinh,NgaySinh=@NgaySinh,Email=@Email,Sdt=@Sdt,DiaChi=@DiaChi,ChucVu=@ChucVu,NgayVaoLam=@NgayVaoLam,Luong=@Luong,HeSoLuong=@HeSoLuong where MaNV=@MaNV";
+            SqlParameter[] para = new SqlParameter[11];
+            para[0] = new SqlParameter("@MaNV", nvdto.MaNV);
+            para[1] = new SqlParameter("@HoTen", nvdto.HoTen);
+            para[2] = new SqlParameter("@GioiTinh", nvdto.GioiTinh);
+            para[3] = new SqlParameter("@NgaySinh", nvdto.NgaySinh.ToString("yyyy/MM/dd"));
+            para[4] = new SqlParameter("@Email", nvdto.Email);
+            para[5] = new SqlParameter("@Sdt", nvdto.SDT);
+            para[6] = new SqlParameter("@DiaChi", nvdto.DiaChi);
+            para[7] = new SqlParameter("@ChucVu", nvdto.ChucVu);
+            para[8] = new SqlParameter("@NgayVaoLam", nvdto.NgayVaoLam.ToString("yyyy/MM/dd"));
+            para[9] = new SqlParameter("@Luong", nvdto.Luong);
+            para[10] = new SqlParameter("@HeSoLuong", nvdto.HeSoLuong);
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            int ketqua = DataProvider.TruyVanUpdate(update, para, conn);
+            conn.Close();
+            return ketqua;
+        }
+        public int delete_NhanvienDAO(NhanVienDTO nvdto)
+        {
+            string delete = "Update NHANVIEN set STT = 0 where MaNV=@MaNV";
+            SqlParameter[] para = new SqlParameter[1];
+            para[0] = new SqlParameter("@MaNV", nvdto.MaNV);
+            SqlConnection conn = DataProvider.TaoKetNoi();
+            int ketqua = DataProvider.TruyVanUpdate(delete, para, conn);
+            conn.Close();
+            return ketqua;
+        }
     }
 }

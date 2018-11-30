@@ -86,6 +86,7 @@ namespace QuanLyTrungTamNgoaiNgu
             tkchon.LoaiTK = ucLoaiTaiKhoan.LoaiTK;
         }
 
+
         private void btn_Timtk_Click(object sender, EventArgs e)
         {
             LoadTaiKhoantheotentk();

@@ -30,6 +30,7 @@ namespace QuanLyTrungTamNgoaiNgu
         FormTaiKhoan frm_TaiKhoan;
         FormPhongHoc frm_PhongHoc;
         FormBienLai frm_BienLai;
+        FormKhoaHoc frm_khoahoc;
         private void DongTatCaForm()
         {
             foreach (var item in this.MdiChildren)
@@ -134,7 +135,11 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void mni_KhoaHoc_Click(object sender, EventArgs e)
         {
-
+            DongTatCaForm();
+            frm_khoahoc = new FormKhoaHoc();
+            frm_khoahoc.MdiParent = this;
+            frm_khoahoc.Dock = DockStyle.Fill;
+            frm_khoahoc.Show();
         }
     }
 }
