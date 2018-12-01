@@ -97,26 +97,26 @@ namespace DAO
             conn.Close();
             return lst_Phong;
         }
-        public int insert_NhanvienDAO(NhanVienDTO nvdto)
+        public int insert_NhanvienDAO(string MaNV, string HoTen, int GioiTinh,DateTime NgaySinh, string Email, string SDT, string DiaChi, string ChucVu, DateTime NgayVaoLam, double Luong, double HeSoLuong)
         {
-            string insert = "insert into NHANVIEN values (@MaNV,@TenTK,@HoTen,@GioiTinh,@NgaySinh,@Email,@Sdt,@DiaChi,@ChucVu,@NgayVaoLam,@Luong,@HeSoLuong,1)";
-            SqlParameter[] para = new SqlParameter[12];
-            para[0] = new SqlParameter("@MaNV", nvdto.MaNV);
-            para[1] = new SqlParameter("@TenTK", nvdto.TenTK);
-            para[2] = new SqlParameter("@HoTen", nvdto.HoTen);
-            para[3] = new SqlParameter("@GioiTinh", nvdto.GioiTinh);
-            para[4] = new SqlParameter("@NgaySinh", nvdto.NgaySinh.ToString("yyyy/MM/dd"));
-            para[5] = new SqlParameter("@Email", nvdto.Email);
-            para[6] = new SqlParameter("@Sdt", nvdto.SDT);
-            para[7] = new SqlParameter("@DiaChi", nvdto.DiaChi);
-            para[8] = new SqlParameter("@ChucVu", nvdto.ChucVu);
-            para[9] = new SqlParameter("@NgayVaoLam", nvdto.NgayVaoLam.ToString("yyyy/MM/dd"));
-            para[10] = new SqlParameter("@Luong", nvdto.Luong);
-            para[11] = new SqlParameter("@HeSoLuong", nvdto.HeSoLuong);
+            string insert = "insert into NHANVIEN values (@MaNV,NULL,@HoTen,@GioiTinh,@NgaySinh,@Email,@SDT,@DiaChi,@ChucVu,@NgayVaoLam,@Luong,@HeSoLuong,1)";
+            SqlParameter[] para = new SqlParameter[11];
+            para[0] = new SqlParameter("@MaNV", MaNV);
+            //para[1] = new SqlParameter("@TenTK", TenTK);
+            para[1] = new SqlParameter("@HoTen", HoTen);
+            para[2] = new SqlParameter("@GioiTinh",GioiTinh);
+            para[3] = new SqlParameter("@NgaySinh",NgaySinh.ToString("yyyy/MM/dd"));
+            para[4] = new SqlParameter("@Email", Email);
+            para[5] = new SqlParameter("@Sdt", SDT);
+            para[6] = new SqlParameter("@DiaChi", DiaChi);
+            para[7] = new SqlParameter("@ChucVu",ChucVu);
+            para[8] = new SqlParameter("@NgayVaoLam",NgayVaoLam.ToString("yyyy/MM/dd"));
+            para[9] = new SqlParameter("@Luong", Luong);
+            para[10] = new SqlParameter("@HeSoLuong", HeSoLuong);
             SqlConnection conn = DataProvider.TaoKetNoi();
             int ketqua = DataProvider.TruyVanInsert(insert, para, conn);
             conn.Close();
-            return ketqua;
+            return ketqua;           
         }
 
         public int update_NhanvienDAO(NhanVienDTO nvdto)

@@ -77,7 +77,11 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             List<NhanVienDTO> lst_NhanVien = new List<NhanVienDTO>();
             lst_NhanVien = _nv.get_NhanVienBUS();
-            dgv_NhanVien.DataSource = lst_NhanVien;          
+            dgv_NhanVien.DataSource = lst_NhanVien;
+            //if(int.Parse(dgv_NhanVien.Columns["GioiTinh"].ToString()) == 1)
+            //{
+            //    dgv_NhanVien.Columns["GioiTinh"] = "Nam";
+            //}
         }
 
         private void FormNhanVien_Load(object sender, EventArgs e)
@@ -139,8 +143,6 @@ namespace QuanLyTrungTamNgoaiNgu
             }
             else
             {
-
-
                 nvchon.TenTK = txt_TenTK.Text;
                 nvchon.Luong = double.Parse(txt_Luong.Text);
                 nvchon.HeSoLuong = double.Parse(txt_HeSoLuong.Text);
@@ -227,6 +229,8 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             ucThongTinNV.Enabled = true;
             ucChucVu.Enabled = true;
+            txt_MaNV.Enabled = true;
+            txt_TenTK.Enabled = false;
             txt_Luong.Enabled = true;
             txt_HeSoLuong.Enabled = true;
             dtp_NgayVaoLam.Enabled = true;
@@ -248,6 +252,7 @@ namespace QuanLyTrungTamNgoaiNgu
             btn_sua.Enabled = false;
             btn_huy.Enabled = false;
             btn_xoa.Enabled = false;
+            btn_them.Enabled = false;
             //dgv_NhanVien.ClearSelection();
             _chucnang = 2;
         }
@@ -281,7 +286,18 @@ namespace QuanLyTrungTamNgoaiNgu
                     }
                     else
                     {
-                        int r = _nhanvienBUS.add_NhanvienBUS(nvdto);
+                        int r = _nhanvienBUS.add_NhanvienBUS(
+                            txt_MaNV.Text,
+                            ucThongTinNV.HoTen,
+                        ucThongTinNV.GioiTinh,
+                        ucThongTinNV.NgaySinh,
+                        ucThongTinNV.Email,
+                        ucThongTinNV.SDT,
+                        ucThongTinNV.DiaChi,
+                        ucChucVu.ChucVu,
+                        dtp_NgayVaoLam.Value,
+                        double.Parse(txt_Luong.Text),
+                        double.Parse(txt_HeSoLuong.Text));
                         if (r > 0)
                         {
                             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -307,7 +323,9 @@ namespace QuanLyTrungTamNgoaiNgu
                     }
                     else
                     {
-                        int r = _nhanvienBUS.update_NhanvienBUS(nvdto);
+                        GetDataChiTiet();
+
+                        int r = _nhanvienBUS.update_NhanvienBUS(nvchon);
                         if (r > 0)
                         {
                             MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

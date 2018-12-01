@@ -24,10 +24,10 @@ namespace BUS
         {
             return _nv.tim_NhanvienDAO(MaNV);
         }
-        public int add_NhanvienBUS(NhanVienDTO nvdto)
+        public int add_NhanvienBUS(string MaNV, string HoTen, int GioiTinh, DateTime NgaySinh, string Email, string SDT, string DiaChi, string ChucVu, DateTime NgayVaoLam, double Luong, double HeSoLuong)
         {
             NhanVienDAO nvdao = new NhanVienDAO();
-            return nvdao.insert_NhanvienDAO(nvdto);
+            return nvdao.insert_NhanvienDAO(MaNV, HoTen, GioiTinh, NgaySinh, Email, SDT, DiaChi, ChucVu, NgayVaoLam,Luong, HeSoLuong);
         }
         public int update_NhanvienBUS(NhanVienDTO nvdto)
         {
