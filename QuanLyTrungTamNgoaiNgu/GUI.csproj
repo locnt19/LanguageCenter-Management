@@ -101,6 +101,12 @@
     <Compile Include="FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReport2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport2.Designer.cs">
+      <DependentUpon>FormReport2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyTrungTamNgoaiNguDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyTrungTamNgoaiNguDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyTrungTamNgoaiNguDataSet1.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormKhoaHoc.resx">
       <DependentUpon>FormKhoaHoc.cs</DependentUpon>
@@ -147,6 +158,9 @@
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReport2.resx">
+      <DependentUpon>FormReport2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +178,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -202,6 +218,17 @@
     </None>
     <None Include="QuanLyTrungTamNgoaiNguDataSet.xss">
       <DependentUpon>QuanLyTrungTamNgoaiNguDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyTrungTamNgoaiNguDataSet1.xsc">
+      <DependentUpon>QuanLyTrungTamNgoaiNguDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyTrungTamNgoaiNguDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyTrungTamNgoaiNguDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyTrungTamNgoaiNguDataSet1.xss">
+      <DependentUpon>QuanLyTrungTamNgoaiNguDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Resources\account.png" />
   </ItemGroup>

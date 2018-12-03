@@ -19,10 +19,19 @@ namespace QuanLyTrungTamNgoaiNgu
 
         private void FormReport_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void txt_tim_Click(object sender, EventArgs e)
+        {
             // TODO: This line of code loads data into the 'QuanLyTrungTamNgoaiNguDataSet.BienLai' table. You can move, or remove it, as needed.
-            this.BienLaiTableAdapter.Fill(this.QuanLyTrungTamNgoaiNguDataSet.BienLai);
+            this.BienLaiTableAdapter.Fill(this.QuanLyTrungTamNgoaiNguDataSet.BienLai, txt_tim.Text);
 
             this.reportViewer1.RefreshReport();
+            // TODO: This line of code loads data into the 'QuanLyTrungTamNgoaiNguDataSet.ChiTietBienLai' table. You can move, or remove it, as needed.
+            this.ChiTietBienLaiTableAdapter.Fill(this.QuanLyTrungTamNgoaiNguDataSet.ChiTietBienLai, txt_tim.Text);
+
+            this.reportViewer2.RefreshReport();
         }
     }
 }

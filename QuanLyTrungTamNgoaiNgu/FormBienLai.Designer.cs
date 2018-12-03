@@ -72,6 +72,7 @@
             this.colLoaiTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.grb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bienlai)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +80,7 @@
             // btn_Luu
             // 
             this.btn_Luu.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btn_Luu.Location = new System.Drawing.Point(701, 239);
+            this.btn_Luu.Location = new System.Drawing.Point(634, 239);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(103, 45);
             this.btn_Luu.TabIndex = 37;
@@ -129,7 +130,7 @@
             // btn_Them
             // 
             this.btn_Them.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btn_Them.Location = new System.Drawing.Point(296, 239);
+            this.btn_Them.Location = new System.Drawing.Point(229, 239);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(103, 45);
             this.btn_Them.TabIndex = 24;
@@ -150,7 +151,7 @@
             // btn_Inreport
             // 
             this.btn_Inreport.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btn_Inreport.Location = new System.Drawing.Point(431, 239);
+            this.btn_Inreport.Location = new System.Drawing.Point(364, 239);
             this.btn_Inreport.Name = "btn_Inreport";
             this.btn_Inreport.Size = new System.Drawing.Size(103, 45);
             this.btn_Inreport.TabIndex = 25;
@@ -179,6 +180,7 @@
             // 
             // grb
             // 
+            this.grb.Controls.Add(this.button1);
             this.grb.Controls.Add(this.btn_OK);
             this.grb.Controls.Add(this.label4);
             this.grb.Controls.Add(this.btn_Check);
@@ -276,7 +278,7 @@
             // btn_LamMoi
             // 
             this.btn_LamMoi.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btn_LamMoi.Location = new System.Drawing.Point(161, 239);
+            this.btn_LamMoi.Location = new System.Drawing.Point(94, 239);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(103, 45);
             this.btn_LamMoi.TabIndex = 58;
@@ -366,7 +368,7 @@
             // btn_Huy
             // 
             this.btn_Huy.Font = new System.Drawing.Font("Tahoma", 15.75F);
-            this.btn_Huy.Location = new System.Drawing.Point(566, 239);
+            this.btn_Huy.Location = new System.Drawing.Point(499, 239);
             this.btn_Huy.Name = "btn_Huy";
             this.btn_Huy.Size = new System.Drawing.Size(103, 45);
             this.btn_Huy.TabIndex = 36;
@@ -481,6 +483,17 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 79;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Tahoma", 15.75F);
+            this.button1.Location = new System.Drawing.Point(774, 239);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 45);
+            this.button1.TabIndex = 65;
+            this.button1.Text = "In Danh sách ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormBienLai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -538,6 +551,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btn_OK;
+        private System.Windows.Forms.Button button1;
 
     }
 }

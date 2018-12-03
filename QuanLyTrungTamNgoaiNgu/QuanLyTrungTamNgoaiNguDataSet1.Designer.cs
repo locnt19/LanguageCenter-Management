@@ -20,9 +20,9 @@ namespace QuanLyTrungTamNgoaiNgu {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("QuanLyTrungTamNgoaiNguDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("QuanLyTrungTamNgoaiNguDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class QuanLyTrungTamNgoaiNguDataSet : global::System.Data.DataSet {
+    public partial class QuanLyTrungTamNgoaiNguDataSet1 : global::System.Data.DataSet {
         
         private BienLaiDataTable tableBienLai;
         
@@ -34,7 +34,7 @@ namespace QuanLyTrungTamNgoaiNgu {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public QuanLyTrungTamNgoaiNguDataSet() {
+        public QuanLyTrungTamNgoaiNguDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -45,7 +45,7 @@ namespace QuanLyTrungTamNgoaiNgu {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected QuanLyTrungTamNgoaiNguDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected QuanLyTrungTamNgoaiNguDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -144,7 +144,7 @@ namespace QuanLyTrungTamNgoaiNgu {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            QuanLyTrungTamNgoaiNguDataSet cln = ((QuanLyTrungTamNgoaiNguDataSet)(base.Clone()));
+            QuanLyTrungTamNgoaiNguDataSet1 cln = ((QuanLyTrungTamNgoaiNguDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -226,9 +226,9 @@ namespace QuanLyTrungTamNgoaiNgu {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "QuanLyTrungTamNgoaiNguDataSet";
+            this.DataSetName = "QuanLyTrungTamNgoaiNguDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/QuanLyTrungTamNgoaiNguDataSet.xsd";
+            this.Namespace = "http://tempuri.org/QuanLyTrungTamNgoaiNguDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableBienLai = new BienLaiDataTable();
@@ -264,7 +264,7 @@ namespace QuanLyTrungTamNgoaiNgu {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            QuanLyTrungTamNgoaiNguDataSet ds = new QuanLyTrungTamNgoaiNguDataSet();
+            QuanLyTrungTamNgoaiNguDataSet1 ds = new QuanLyTrungTamNgoaiNguDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -574,7 +574,7 @@ namespace QuanLyTrungTamNgoaiNgu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyTrungTamNgoaiNguDataSet ds = new QuanLyTrungTamNgoaiNguDataSet();
+                QuanLyTrungTamNgoaiNguDataSet1 ds = new QuanLyTrungTamNgoaiNguDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -868,7 +868,7 @@ namespace QuanLyTrungTamNgoaiNgu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyTrungTamNgoaiNguDataSet ds = new QuanLyTrungTamNgoaiNguDataSet();
+                QuanLyTrungTamNgoaiNguDataSet1 ds = new QuanLyTrungTamNgoaiNguDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1170,7 +1170,7 @@ namespace QuanLyTrungTamNgoaiNgu {
         }
     }
 }
-namespace QuanLyTrungTamNgoaiNgu.QuanLyTrungTamNgoaiNguDataSetTableAdapters {
+namespace QuanLyTrungTamNgoaiNgu.QuanLyTrungTamNgoaiNguDataSet1TableAdapters {
     
     
     /// <summary>
@@ -1353,24 +1353,16 @@ SELECT MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap FROM BienLai WHERE (MaB
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap FROM dbo.BienLai WHERE M" +
-                "aBienLai=@MaBienLai";
+            this._commandCollection[0].CommandText = "SELECT MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap FROM dbo.BienLai";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaBienLai", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "MaBienLai", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyTrungTamNgoaiNguDataSet.BienLaiDataTable dataTable, string MaBienLai) {
+        public virtual int Fill(QuanLyTrungTamNgoaiNguDataSet1.BienLaiDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((MaBienLai == null)) {
-                throw new global::System.ArgumentNullException("MaBienLai");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(MaBienLai));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1382,15 +1374,9 @@ SELECT MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap FROM BienLai WHERE (MaB
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyTrungTamNgoaiNguDataSet.BienLaiDataTable GetData(string MaBienLai) {
+        public virtual QuanLyTrungTamNgoaiNguDataSet1.BienLaiDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((MaBienLai == null)) {
-                throw new global::System.ArgumentNullException("MaBienLai");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(MaBienLai));
-            }
-            QuanLyTrungTamNgoaiNguDataSet.BienLaiDataTable dataTable = new QuanLyTrungTamNgoaiNguDataSet.BienLaiDataTable();
+            QuanLyTrungTamNgoaiNguDataSet1.BienLaiDataTable dataTable = new QuanLyTrungTamNgoaiNguDataSet1.BienLaiDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1398,14 +1384,14 @@ SELECT MaBienLai, MaHV, TongThanhToan, NguoiLap, NgayLap FROM BienLai WHERE (MaB
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyTrungTamNgoaiNguDataSet.BienLaiDataTable dataTable) {
+        public virtual int Update(QuanLyTrungTamNgoaiNguDataSet1.BienLaiDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyTrungTamNgoaiNguDataSet dataSet) {
+        public virtual int Update(QuanLyTrungTamNgoaiNguDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "BienLai");
         }
         
@@ -1752,24 +1738,16 @@ SELECT MaBienLai, KhoaHoc, HocPhi FROM ChiTietBienLai WHERE (KhoaHoc = @KhoaHoc)
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MaBienLai, KhoaHoc, HocPhi FROM dbo.ChiTietBienLai where MaBienLai=@MaBien" +
-                "Lai";
+            this._commandCollection[0].CommandText = "SELECT MaBienLai, KhoaHoc, HocPhi FROM dbo.ChiTietBienLai";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaBienLai", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "MaBienLai", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyTrungTamNgoaiNguDataSet.ChiTietBienLaiDataTable dataTable, string MaBienLai) {
+        public virtual int Fill(QuanLyTrungTamNgoaiNguDataSet1.ChiTietBienLaiDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((MaBienLai == null)) {
-                throw new global::System.ArgumentNullException("MaBienLai");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(MaBienLai));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1781,15 +1759,9 @@ SELECT MaBienLai, KhoaHoc, HocPhi FROM ChiTietBienLai WHERE (KhoaHoc = @KhoaHoc)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyTrungTamNgoaiNguDataSet.ChiTietBienLaiDataTable GetData(string MaBienLai) {
+        public virtual QuanLyTrungTamNgoaiNguDataSet1.ChiTietBienLaiDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((MaBienLai == null)) {
-                throw new global::System.ArgumentNullException("MaBienLai");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(MaBienLai));
-            }
-            QuanLyTrungTamNgoaiNguDataSet.ChiTietBienLaiDataTable dataTable = new QuanLyTrungTamNgoaiNguDataSet.ChiTietBienLaiDataTable();
+            QuanLyTrungTamNgoaiNguDataSet1.ChiTietBienLaiDataTable dataTable = new QuanLyTrungTamNgoaiNguDataSet1.ChiTietBienLaiDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1797,14 +1769,14 @@ SELECT MaBienLai, KhoaHoc, HocPhi FROM ChiTietBienLai WHERE (KhoaHoc = @KhoaHoc)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyTrungTamNgoaiNguDataSet.ChiTietBienLaiDataTable dataTable) {
+        public virtual int Update(QuanLyTrungTamNgoaiNguDataSet1.ChiTietBienLaiDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyTrungTamNgoaiNguDataSet dataSet) {
+        public virtual int Update(QuanLyTrungTamNgoaiNguDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "ChiTietBienLai");
         }
         
@@ -2061,7 +2033,7 @@ SELECT MaBienLai, KhoaHoc, HocPhi FROM ChiTietBienLai WHERE (KhoaHoc = @KhoaHoc)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(QuanLyTrungTamNgoaiNguDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(QuanLyTrungTamNgoaiNguDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._bienLaiTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.BienLai.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -2089,7 +2061,7 @@ SELECT MaBienLai, KhoaHoc, HocPhi FROM ChiTietBienLai WHERE (KhoaHoc = @KhoaHoc)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(QuanLyTrungTamNgoaiNguDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(QuanLyTrungTamNgoaiNguDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._bienLaiTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.BienLai.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -2115,7 +2087,7 @@ SELECT MaBienLai, KhoaHoc, HocPhi FROM ChiTietBienLai WHERE (KhoaHoc = @KhoaHoc)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(QuanLyTrungTamNgoaiNguDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(QuanLyTrungTamNgoaiNguDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._chiTietBienLaiTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ChiTietBienLai.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -2165,7 +2137,7 @@ SELECT MaBienLai, KhoaHoc, HocPhi FROM ChiTietBienLai WHERE (KhoaHoc = @KhoaHoc)
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(QuanLyTrungTamNgoaiNguDataSet dataSet) {
+        public virtual int UpdateAll(QuanLyTrungTamNgoaiNguDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

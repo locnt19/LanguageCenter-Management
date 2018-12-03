@@ -25,6 +25,7 @@ namespace QuanLyTrungTamNgoaiNgu
         KhoaHocBUS _KhoaHocBUS = new KhoaHocBUS();
         HocVienDTO _TimChonHocVien = null;
         FormReport frm_rp;
+        FormReport2 frm_rp2;
 
         public FormBienLai()
         {
@@ -288,6 +289,12 @@ namespace QuanLyTrungTamNgoaiNgu
         {
             frm_rp = new FormReport();
             frm_rp.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_rp2 = new FormReport2();
+            frm_rp2.Show();
         }
     }
 }
