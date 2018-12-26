@@ -38,10 +38,8 @@
             this.grb_ThongTin = new System.Windows.Forms.GroupBox();
             this.btn_DangXuat = new System.Windows.Forms.Button();
             this.lbl_TaiKhoan = new System.Windows.Forms.Label();
-            this.pic_Avatar = new System.Windows.Forms.PictureBox();
             this.mnu_Main.SuspendLayout();
             this.grb_ThongTin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Avatar)).BeginInit();
             this.SuspendLayout();
             // 
             // mnu_Main
@@ -108,7 +106,6 @@
             this.grb_ThongTin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grb_ThongTin.Controls.Add(this.btn_DangXuat);
             this.grb_ThongTin.Controls.Add(this.lbl_TaiKhoan);
-            this.grb_ThongTin.Controls.Add(this.pic_Avatar);
             this.grb_ThongTin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_ThongTin.Location = new System.Drawing.Point(0, 217);
             this.grb_ThongTin.Name = "grb_ThongTin";
@@ -141,15 +138,6 @@
             this.lbl_TaiKhoan.Text = "1234567890";
             this.lbl_TaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pic_Avatar
-            // 
-            this.pic_Avatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_Avatar.Location = new System.Drawing.Point(14, 26);
-            this.pic_Avatar.Name = "pic_Avatar";
-            this.pic_Avatar.Size = new System.Drawing.Size(100, 100);
-            this.pic_Avatar.TabIndex = 0;
-            this.pic_Avatar.TabStop = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,7 +153,6 @@
             this.mnu_Main.PerformLayout();
             this.grb_ThongTin.ResumeLayout(false);
             this.grb_ThongTin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Avatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,7 +168,6 @@
         private System.Windows.Forms.ToolStripMenuItem mni_PhongHoc;
         private System.Windows.Forms.ToolStripMenuItem mni_TaiKhoan;
         private System.Windows.Forms.GroupBox grb_ThongTin;
-        private System.Windows.Forms.PictureBox pic_Avatar;
         private System.Windows.Forms.Label lbl_TaiKhoan;
         private System.Windows.Forms.Button btn_DangXuat;
 

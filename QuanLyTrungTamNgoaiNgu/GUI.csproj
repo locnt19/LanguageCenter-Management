@@ -121,10 +121,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyTrungTamNgoaiNguDataSet.cs">
+      <DependentUpon>QuanLyTrungTamNgoaiNguDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="QuanLyTrungTamNgoaiNguDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyTrungTamNgoaiNguDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyTrungTamNgoaiNguDataSet1.cs">
+      <DependentUpon>QuanLyTrungTamNgoaiNguDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="QuanLyTrungTamNgoaiNguDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>

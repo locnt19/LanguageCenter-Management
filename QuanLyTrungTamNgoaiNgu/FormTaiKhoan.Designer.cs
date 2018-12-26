@@ -36,9 +36,6 @@
             this.btn_Timtk = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
-            this.colLoaiTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTentk = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_taikhoan = new System.Windows.Forms.DataGridView();
             this.btn_Them = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +43,9 @@
             this.ucLoaiTaiKhoan = new UC.ucLoaiTaiKhoan();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.btn_Huy = new System.Windows.Forms.Button();
+            this.colTentk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLoaiTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_taikhoan)).BeginInit();
             this.grb.SuspendLayout();
             this.SuspendLayout();
@@ -126,24 +126,6 @@
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Doimk_Click);
-            // 
-            // colLoaiTK
-            // 
-            this.colLoaiTK.DataPropertyName = "LoaiTK";
-            this.colLoaiTK.HeaderText = "Loại tài khoản";
-            this.colLoaiTK.Name = "colLoaiTK";
-            // 
-            // colMatKhau
-            // 
-            this.colMatKhau.DataPropertyName = "MatKhau";
-            this.colMatKhau.HeaderText = "Mật khẩu";
-            this.colMatKhau.Name = "colMatKhau";
-            // 
-            // colTentk
-            // 
-            this.colTentk.DataPropertyName = "TenTK";
-            this.colTentk.HeaderText = "Tên Tài khoản";
-            this.colTentk.Name = "colTentk";
             // 
             // dgv_taikhoan
             // 
@@ -239,6 +221,25 @@
             this.btn_Huy.UseVisualStyleBackColor = true;
             this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
             // 
+            // colTentk
+            // 
+            this.colTentk.DataPropertyName = "TenTK";
+            this.colTentk.HeaderText = "Tên Tài khoản";
+            this.colTentk.Name = "colTentk";
+            // 
+            // colMatKhau
+            // 
+            this.colMatKhau.DataPropertyName = "MatKhau";
+            this.colMatKhau.HeaderText = "Mật khẩu";
+            this.colMatKhau.Name = "colMatKhau";
+            this.colMatKhau.Visible = false;
+            // 
+            // colLoaiTK
+            // 
+            this.colLoaiTK.DataPropertyName = "LoaiTK";
+            this.colLoaiTK.HeaderText = "Loại tài khoản";
+            this.colLoaiTK.Name = "colLoaiTK";
+            // 
             // FormTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,9 +267,6 @@
         private System.Windows.Forms.Button btn_Timtk;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLoaiTK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMatKhau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTentk;
         private System.Windows.Forms.DataGridView dgv_taikhoan;
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Label label1;
@@ -276,6 +274,9 @@
         private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.Button btn_Huy;
         private UC.ucLoaiTaiKhoan ucLoaiTaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTentk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMatKhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLoaiTK;
 
     }
 }

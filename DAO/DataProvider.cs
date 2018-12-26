@@ -8,8 +8,8 @@ namespace DAO
 {
     public class DataProvider
     {
-        private static string ChuoiKetNoi = @"Data Source=.;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
-        //private static string ChuoiKetNoi = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
+        //private static string ChuoiKetNoi = @"Data Source=.;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
+        private static string ChuoiKetNoi = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyTrungTamNgoaiNgu;Integrated Security=True";
         private static SqlDataAdapter adt = new SqlDataAdapter();
         public static SqlConnection TaoKetNoi()
         {

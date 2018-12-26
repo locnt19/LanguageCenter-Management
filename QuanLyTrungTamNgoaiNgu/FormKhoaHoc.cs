@@ -161,7 +161,7 @@ namespace QuanLyTrungTamNgoaiNgu
             txt_tenkh.ReadOnly = false;
             txt_Mota.ReadOnly = false;
             txt_hocphi.ReadOnly = false;
-            cbb_KhoaHoc.Enabled = true;
+            cbb_KhoaHoc.Enabled = false;
             ucPhongHoc.Enabled = true;
             ucCaHoc.Enabled = true;
             dtp_ngaybatdau.Enabled = true;

@@ -163,6 +163,10 @@ namespace QuanLyTrungTamNgoaiNgu
                             txt_TenTK.Enabled = false;
                             txt_matkhau.Enabled = false;
                             ucLoaiTaiKhoan.Enabled = false;
+                            btn_Sua.Enabled = true;
+                            btn_Luu.Enabled = true;
+                            btn_Xoa.Enabled = true;
+                            btn_Them.Enabled = true;
                         }
                         else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }

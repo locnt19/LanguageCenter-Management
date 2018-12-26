@@ -199,11 +199,11 @@ namespace QuanLyTrungTamNgoaiNgu
             _chucnang = 1;
         }
 
-       
 
-       
 
-     
+
+
+
         private void btn_Tim_Click(object sender, EventArgs e)
         {
             timnhanvien();
@@ -250,7 +250,7 @@ namespace QuanLyTrungTamNgoaiNgu
             dtp_NgayVaoLam.Enabled = true;
             txt_TenTK.Enabled = false;
             btn_sua.Enabled = false;
-            btn_huy.Enabled = false;
+            btn_huy.Enabled = true;
             btn_xoa.Enabled = false;
             btn_them.Enabled = false;
             //dgv_NhanVien.ClearSelection();
@@ -266,9 +266,10 @@ namespace QuanLyTrungTamNgoaiNgu
             txt_Luong.Enabled = true;
             txt_HeSoLuong.Enabled = false;
             dtp_NgayVaoLam.Enabled = false;
-            btn_sua.Enabled = false;
-            btn_huy.Enabled = false;
-            btn_xoa.Enabled = false;
+            btn_sua.Enabled = true;
+            btn_huy.Enabled = true;
+            btn_xoa.Enabled = true;
+            btn_them.Enabled = true;
             dgv_NhanVien.ClearSelection();
         }
 
@@ -309,6 +310,11 @@ namespace QuanLyTrungTamNgoaiNgu
                             txt_Luong.Enabled = true;
                             txt_HeSoLuong.Enabled = false;
                             dtp_NgayVaoLam.Enabled = false;
+                            btn_huy.Enabled = true;
+                            btn_luu.Enabled = true;
+                            btn_them.Enabled = true;
+                            btn_sua.Enabled = true;
+                            btn_xoa.Enabled = true;
                         }
                         else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -337,6 +343,11 @@ namespace QuanLyTrungTamNgoaiNgu
                             txt_Luong.Enabled = true;
                             txt_HeSoLuong.Enabled = false;
                             dtp_NgayVaoLam.Enabled = false;
+                            btn_huy.Enabled = true;
+                            btn_luu.Enabled = true;
+                            btn_them.Enabled = true;
+                            btn_sua.Enabled = true;
+                            btn_xoa.Enabled = true;
                         }
                         else MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -347,6 +358,6 @@ namespace QuanLyTrungTamNgoaiNgu
             }
         }
 
-        
+
     }
 }
